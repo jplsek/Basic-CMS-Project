@@ -1,0 +1,66 @@
+.panelRed{
+    color:red;
+}
+.panelGreen{
+    color:green;
+}
+.panelBlue{
+    color:blue;
+}
+.panelLeft{
+    float:left;
+}
+.panelRight{
+    float:right;
+}
+.panelBrowse{
+    border:1px solid rgba(0,0,0,0.4);
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:5px;
+}
+.browseInputDelete{
+    display:none;
+}
+.browseImg{
+    max-width:50%;
+    box-shadow:0 0 10px rgb(100,100,100);
+    margin:5px 0 0 10px;
+}
+.uploadRight{
+    float:right;
+    margin:40px 10px 0 0;
+    width:50%;
+}
+.uploadImg{
+    width:100%;
+    box-shadow:0 0 10px rgb(100,100,100);
+}
+.panelLogIn{
+    text-align:center;
+    margin:0 auto;
+    max-width:400px;
+    border:1px solid rgba(0,0,0,0.3);
+    border-radius:10px;
+    padding:10px;
+}
+.panelTextarea{
+    width:100%;
+    height:25em;
+    font-family:monospace;
+}
+.panelList li{
+    list-style:outside;
+}
+.panelClear{
+    clear:both;
+}
+
+/* Dynamic rules */
+
+@media all and (max-width: 650px){
+    .uploadRight{
+        float:none;
+        width:100%;
+    }
+}
