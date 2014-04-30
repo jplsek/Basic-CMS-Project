@@ -4,6 +4,8 @@ include "headContent.php";
 
 session_start();
 
+$dir = substr($uploads, 2); // takes off the two periods
+
 if (isset($_SESSION['logged_in'])){
     //display delete page
     
@@ -57,31 +59,31 @@ if (isset($_SESSION['logged_in'])){
             }
         } else {
         
-            echo 'File Uploaded: <span class="panelBlue">' . $_FILES['file']['name'] . '</span><br/>';
-            echo 'File Type: <span class="panelBlue">' . $_FILES['file']['type'] . '</span><br/>';
-            echo 'File Size: <span class="panelBlue">' . ($_FILES['file']['size'] / 1024) . ' kB</span><br/>';
-            echo 'Temp File: <span class="panelBlue">' . $_FILES['file']['tmp_name'] . '</span><br/><br/>';
+            echo 'File Uploaded: <span class="panelBlue">'.$_FILES['file']['name']. '</span><br/>';
+            echo 'File Type: <span class="panelBlue">'.$_FILES['file']['type']. '</span><br/>';
+            echo 'File Size: <span class="panelBlue">'.($_FILES['file']['size'] / 1024).' kB</span><br/>';
+            echo 'Temp File: <span class="panelBlue">'.$_FILES['file']['tmp_name']. '</span><br/><br/>';
 
-            if (file_exists('../uploads/' . $_FILES['file']['name'])) {
+            if (file_exists($uploads.$_FILES['file']['name'])) {
                 echo '<span class="panelRed">NOTICE:</span>
                     <span class="panelBlue">' . $_FILES['file']['name'] . '</span> 
                     already exists.<br/><br/>';
             } else {
-              move_uploaded_file($_FILES['file']['tmp_name'],'../uploads/' . $_FILES['file']['name']);
+              move_uploaded_file($_FILES['file']['tmp_name'], $uploads.'/'.$_FILES['file']['name']);
               echo '<span class="panelGreen">Success!</span><br/>
-                    Stored in: <span class="panelBlue">' . '/uploads/' . $_FILES['file']['name'] . '</span><br/><br/>';
+                    Stored in: <span class="panelBlue">'.$dir.'/'.$_FILES['file']['name'] . '</span><br/><br/>';
             }
             
             echo 'If you uploaded an image, you can show it with:<br/>
                 <span class="panelBlue">
                     <code>
-                        &lt;img src="/uploads/'. $_FILES['file']['name'] .'" alt=""/&gt;
+                        &lt;img src="'.$dir.'/'.$_FILES['file']['name'] .'" alt=""/&gt;
                     </code>
                 </span><br/><br/>';
             ?>
             </div>
             <div class="uploadRight">
-                <img class="uploadImg" src="/uploads/<?php echo $_FILES['file']['name']; ?>"/>
+                <img class="uploadImg" src="<?php echo $dir.'/'.$_FILES['file']['name']; ?>"/>
             </div>
             <div class="panelClear">
             <?php

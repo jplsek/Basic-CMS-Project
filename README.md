@@ -19,17 +19,19 @@ This was a learning experience. You can use it if you want, but be prepared for 
 3. Change the settings according your setup in /cms/settings.php
 
 ## The way it works
-cms/index.php
+example: cms/index.php
 
-opens header.php (your file, from <html> to an open <head> tag)
+&nbsp;&nbsp;&nbsp;&nbsp;opens headerCont.php (cms file, has stuff for the `<head>` tag)
 
-opens headerCont.php (cms file, has stuff for the <head> tag)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens header.php (your file, from `<html>` to an open `<head>` tag)
 
-opens nav.php (your file, ends <head> tag, and has your navigation, containers, etc)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headcontent actual content
 
-opens itself
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens nav.php (your file, ends `<head>` tag, and has your navigation, containers, etc)
 
-opens footer.php (your file, has the end of your containers, etc, and has the footer of your site)
+&nbsp;&nbsp;&nbsp;&nbsp;index.php actual content
+
+&nbsp;&nbsp;&nbsp;&nbsp;opens footer.php (your file, has the end of your containers, etc, and has the footer of your site)
 
 (this is all set in settings.php)
 
@@ -39,16 +41,15 @@ Username: admin
 Password: password
 
 ## Currently working on:
-1. Dynamically look for files within docroot (edit static content)
+1. Changing the default password (I have this in place and commented out, but not created)
 
-2. Add pages into docroot
+2. Add pages into docroot and subdirs (this will include file restructure outside the CMS)
 
-3. Changing password (I have this in place and commented out, but not created)
+3. Make it nicer looking by default
 
 4. Adding users?
 
 5. Switch to sqlite?
 
-6. Make it nicer looking by default?
 
 If you find bugs, you can message me if you want to.

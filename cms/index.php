@@ -21,7 +21,7 @@ if (isset($_SESSION['logged_in'])){
         <li><a href="logout.php">Logout</a></li>
     </ol>
     
-    <small>Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a> | Version 0.5.0</small>
+    <small>Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a> | Version 0.6.0</small>
     
     <?php
 } else {
