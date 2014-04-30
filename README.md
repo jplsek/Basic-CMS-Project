@@ -7,7 +7,7 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 * The CMS can allow you to upload, browse, and delete content (images, video, etc)
 
-* The CMS can allow you to edit static pages, like stylesheets, indexes, etc (right now, this is hard-coded, and not dynamic)
+* The CMS can allow you to edit static pages, like stylesheets, indexes, etc
 
 ## Installation
 1. **You must have a webserver with PHP version 5.5.0 or higher!**
