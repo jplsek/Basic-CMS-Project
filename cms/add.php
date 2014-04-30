@@ -28,7 +28,7 @@ if (isset($_SESSION['logged_in'])){
             
             $query->execute();
             
-            header('Location: index.php');
+            header('Location: ./');
         }
     }
     
@@ -36,7 +36,7 @@ if (isset($_SESSION['logged_in'])){
             
             <h1>Add Article</h1>
             
-            <a href="index.php">&larr; Back</a><br/><br/>
+            <a href="./">&larr; Back</a><br/><br/>
             
             <?php if (isset($error)) { ?>
                 <small style="color:red;"><?php echo $error; ?></small>
@@ -60,7 +60,7 @@ if (isset($_SESSION['logged_in'])){
     <?php
 } else {
     //redirect user
-    header('Location: index.php');
+    header('Location: ./');
 }
 
 include $footer;

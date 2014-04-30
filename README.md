@@ -14,11 +14,20 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 2. MYSQL must be installed.
 
-2. The docroot must be owned by the websever user!
+3. The docroot must be owned by the websever user!
 
-3. Change the settings according your setup in /cms/settings.php
+4. Put the "cms" folder into the docroot (or everything).
 
-## The way it works
+5. Change the settings according your setup in /cms/settings.php
+
+6. You should use index.php in the root (NOT cms) for how to set up the 'blogging' portion. However, right now, this isn't very clear...
+
+## Credentials:
+Username: admin
+
+Password: password
+
+## The way it works (cms)
 example: cms/index.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;opens headerCont.php (cms file, has stuff for the `<head>` tag)
@@ -35,21 +44,20 @@ example: cms/index.php
 
 (this is all set in settings.php)
 
-## Credentials:
-Username: admin
-
-Password: password
-
 ## Currently working on:
-1. Changing the default password (I have this in place and commented out, but not created)
+1. Add pages into docroot and subdirs (this will include file restructure outside the CMS)
 
-2. Add pages into docroot and subdirs (this will include file restructure outside the CMS)
+2. Make it nicer looking by default
 
-3. Make it nicer looking by default
+3. Make installation easier?
 
-4. Adding users?
+Stretch goals (I don't care too much about these...):
 
-5. Switch to sqlite?
+1. Make a 'first run' installer?
+
+2. Adding users? (This will probably add users to a database, but the admin credentails will stay in a seperate file like it is now (check key.php). This is because if you don't want to use the 'blog' functionality of the CMS, you won't have to rely on requiring MYSQL.)
+
+3. Switch to sqlite?
 
 
 If you find bugs, you can message me if you want to.

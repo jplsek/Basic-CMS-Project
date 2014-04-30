@@ -14,14 +14,15 @@ if (isset($_SESSION['logged_in'])){
         <li><a href="add.php">Add Article</a></li>
         <li><a href="edit.php">Edit Article</a></li>
         <li><a href="delete.php">Delete Article</a></li>
-        <li><a href="static.php">Edit Static Content</a></li>
         <li><a href="addPage.php">Add Page</a></li>
+        <li><a href="static.php">Edit Page</a></li>
         <li><a href="upload.php">Upload Files</a></li>
         <li><a href="browse.php">Browse Files</a></li>
+        <li><a href="change.php">Change Password</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ol>
     
-    <small>Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a> | Version 0.6.0</small>
+    <small>Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a> | Version 0.7.0</small>
     
     <?php
 } else {
@@ -36,11 +37,16 @@ if (isset($_SESSION['logged_in'])){
         
             require 'key.php';
             
-            if (password_verify($password, $hash)) {
-                // user correct
-                $_SESSION['logged_in'] = true;
-                header('Location: index.php');
-                exit();
+            if ($username == $user) {
+                if (password_verify($password, $passEnc)) {
+                    // user correct
+                    $_SESSION['logged_in'] = true;
+                    header('Location: ./');
+                    exit();
+                } else {
+                    // user false
+                    $error = 'Incorrect username or password.';
+                }
             } else {
                 // user false
                 $error = 'Incorrect username or password.';
@@ -53,15 +59,16 @@ if (isset($_SESSION['logged_in'])){
     <div class="panelLogIn">
         <h1>Log In</h1>
         
-        <form action="index.php" method="post">
+        <form action="./" method="post">
             <input type="text" name="username" placeholder="Username"/><br/><br/>
             <input type="password" name="password" placeholder="Password"/><br/><br/>
             <input type="submit" value="Login"/><br/>
         </form>
         
-        <?php if (isset($error)) { ?>
-            <small class="red"><?php echo '<span class="panelRed"><strong>Error: '.$error.'</strong></span>'; ?></small>
-        <?php } ?>
+        <?php if (isset($error)) {
+            echo '<span class="panelRed"><strong>Error: '.$error.'</strong></span>';
+        } ?>
+        
     </div>
     <br/>
 

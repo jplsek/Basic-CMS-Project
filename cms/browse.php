@@ -10,7 +10,7 @@ if (isset($_SESSION['logged_in'])){
     ?>
     <h1>Browse Files</h1>
                 
-    <a href="index.php">&larr; Back</a><br/><br/>
+    <a href="./">&larr; Back</a><br/><br/>
     
     <script>
         function clicked(e){
@@ -50,7 +50,7 @@ if (isset($_SESSION['logged_in'])){
     }
 } else {
     //redirect user
-    header('Location: index.php');
+    header('Location: ./');
 }
 
 include $footer;

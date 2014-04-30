@@ -1,5 +1,7 @@
 <?php
 
+// FOR DEBUGGING, COMMENT THE HEADER REDIRECT ON ~LINE 48
+
 session_start();
 
 include_once('connect.php');
@@ -43,7 +45,7 @@ if (isset($_SESSION['logged_in'])){
             echo 'content: ',$content,'<br/>';
             echo 'id: ',$id,'<br/><br/>';
             
-            header('Location: index.php'); //Comment out for debuging
+            header('Location: ./'); //Comment out for debuging
         }
     } else {
         echo 'Connection from edit.php failed?';
@@ -51,7 +53,7 @@ if (isset($_SESSION['logged_in'])){
     
 } else {
     //redirect user
-    header('Location: index.php');
+    header('Location: ./');
 }
     
 ?>

@@ -22,6 +22,11 @@ html{
 }
 .postDate{
     float:right;
+    text-align:right;
+}
+.postEdit{
+    font-size:0.8rem;
+    font-style:italic;
 }
 .postFooter{
     text-align:right;

@@ -14,7 +14,7 @@ if (isset($_SESSION['logged_in'])){
     
     <h1>Upload Files</h1>
             
-    <a href="index.php">&larr; Back</a><br/><br/>
+    <a href="./">&larr; Back</a><br/><br/>
     
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="file">Filename:</label>
@@ -93,7 +93,7 @@ if (isset($_SESSION['logged_in'])){
     <?php
 } else {
     //redirect user
-    header('Location: index.php');
+    header('Location: ./');
 }
 
 include $footer;

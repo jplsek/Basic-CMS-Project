@@ -32,15 +32,15 @@ if (isset($_SESSION['logged_in'])){
             fwrite($fileOpen,$slash);
             fclose($fileOpen) or die ("Error closing file! Check permissions!");
             
-            header('Location: index.php');
+            header('Location: ./');
         }
     }
     
     ?>
             
-    <h1>Edit Static Content</h1>
+    <h1>Edit Page</h1>
     
-    <a href="index.php">&larr; Back</a><br/><br/>
+    <a href="./">&larr; Back</a><br/><br/>
     
     <?php if (isset($error)) { ?>
         <small style="color:red;"><?php echo $error; ?></small>
@@ -81,9 +81,8 @@ if (isset($_SESSION['logged_in'])){
 
     } else {
         
-        echo '<p class="panelBlue">Note: Some files require you to edit the source (click the &lt;&gt; icon)! </p>';
-        echo '<p>Editing File: '.$file.'</p>';
-        echo '<form method="post">';
+        echo '<p>Editing File: '.$file.'</p>
+              <form method="post">';
         
         if (strpos($file, ".html")) {
 echo '<textarea class="panelTextarea" name="fileEdit" id="wys">'; // Shows WYSIWYG editor & CANNOT have newlines under the tag!
@@ -91,15 +90,15 @@ echo '<textarea class="panelTextarea" name="fileEdit" id="wys">'; // Shows WYSIW
 echo '<textarea class="panelTextarea" name="fileEdit" id="sc">'; // Shows source code instead & CANNOT have newlines under the tag!
         }
 print (implode("",file($file))); // Cannot have tabs!!
-    echo '</textarea><br /><br />';
-    echo '<input type="submit" value="Save File" name="changeFile"/>';
-    echo '</form>';
+    echo '</textarea><br /><br />
+          <input type="submit" value="Save File" name="changeFile"/>
+          </form>';
     
     }
 
 } else {
     //redirect user
-    header('Location: index.php');
+    header('Location: ./');
 }
 
 include $footer;

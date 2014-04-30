@@ -11,19 +11,28 @@ $articles = $article->fetch_all();
 
 $articles = array_reverse($articles); // sorts the ID's from the highest, down, instead of from lowest, up. This is for newer posts (higher ID's) to be on the top or the "newest". Later, I might implement to use the timestamp of the articles instead.
 
+$editedMessage = "Edited: "; // The message when an article has been edited.
+
 ?>
 
 <h2>Articles</h2>
 
 <?php
 
-if (isset($_GET['post'])){ // shows a specific post
+if (isset($_GET['post'])){ // shows a specific post after a user clicks it
     
     $id = $_GET['post'];
     $article = $article->fetch_data($id);
     
     $title = $article['article_title']; // separated these to make it easier to make a custom styled post
     $date = date('m/d/Y', $article['article_timestamp']);
+    
+    if ($article['article_edit_timestamp'] == 0){ // checks to see if the article was ever edited (0 means that it has NEVER been edited)
+        $edited = "";
+    } else {
+        $edited = $editedMessage.date('m/d/Y', $article['article_edit_timestamp']);
+    }
+    
     $content = $article['article_content'];
     
     ?>
@@ -35,6 +44,10 @@ if (isset($_GET['post'])){ // shows a specific post
         
         <div class="postDate">
             <?php echo $date; ?>
+            <br/>
+            <span class="postEdit">
+                <?php echo $edited; ?>
+            </span>
         </div>
         
         <div style="clear:both"></div>
@@ -58,6 +71,12 @@ if (isset($_GET['post'])){ // shows a specific post
     $date = date('m/d/Y', $article['article_timestamp']);
     $summary = $article['article_summary'];
     
+    if ($article['article_edit_timestamp'] == 0){ // checks to see if the article was ever edited (0 means that it has NEVER been edited)
+        $edited = "";
+    } else {
+        $edited = $editedMessage.date('m/d/Y', $article['article_edit_timestamp']);
+    }
+    
     ?>
     
     <div class="post">
@@ -70,6 +89,10 @@ if (isset($_GET['post'])){ // shows a specific post
         
         <div class="postDate">
             <?php echo $date; ?>
+            <br/>
+            <span class="postEdit">
+                <?php echo $edited; ?>
+            </span>
         </div>
         
         <div style="clear:both"></div>
