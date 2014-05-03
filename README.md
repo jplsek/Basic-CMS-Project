@@ -34,17 +34,17 @@ example: /cms/addPage.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens settings.php
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headcontent actual content
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php actual content
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens aSettings.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens header.php (your file, from `<html>` to an open `<head>` tag)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headcontent actual content
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php actual content
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens nav.php (your file, ends `<head>` tag, and has your navigation, containers, etc)
 
-&nbsp;&nbsp;&nbsp;&nbsp;index.php actual content
+&nbsp;&nbsp;&nbsp;&nbsp;addPage.php actual content
 
 &nbsp;&nbsp;&nbsp;&nbsp;opens footer.php (your file, has the end of your containers, etc, and has the footer of your site)
 
