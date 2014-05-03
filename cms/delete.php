@@ -19,7 +19,7 @@ if (isset($_SESSION['logged_in'])){
         $query->bindValue(1,$id);
         $query->execute();
         
-        header('Location: index.php');
+        header('Location: ./');
     }
     
     $articles = $article->fetch_all();
@@ -36,7 +36,7 @@ if (isset($_SESSION['logged_in'])){
                 <br/><br/>
             <?php } ?>
             
-            <form action="delete.php" method="get">
+            <form method="get">
             
                 <select name="id">
                     <option>
@@ -47,15 +47,15 @@ if (isset($_SESSION['logged_in'])){
                         </option>
                     <?php } ?>
                 </select>
-                <input type="submit" value="Delete"/>
+                <input type="submit" onclick="clicked(event)" value="Delete"/>
                 
             </form>
     <?php
 } else {
     //redirect user
-    header('Location: index.php');
+    header('Location: ./');
 }
 
-include $footer;
+include "..".$footer;
 
 ?>

@@ -34,7 +34,7 @@ if (isset($_SESSION['logged_in'])){
     
     ?>
             
-            <h1>Add Article</h1>
+            <h1>Add Post</h1>
             
             <a href="./">&larr; Back</a><br/><br/>
             
@@ -43,7 +43,7 @@ if (isset($_SESSION['logged_in'])){
                 <br/><br/>
             <?php } ?>
             
-            <form action="add.php" method="post" autocomplete="off">
+            <form method="post" autocomplete="off">
                 
                 Title:<br/>
                 <input type="text" name="title" placeholder="Title" required /><br/><br/>
@@ -53,7 +53,7 @@ if (isset($_SESSION['logged_in'])){
                 <textarea rows="11" class="panelTextarea" placeholder="Summary" name="summary" maxlength="530"></textarea><br/><br/>
                 Tags:<br/>
                 <input type="text" name="tags" placeholder="Tags"/><br/><br/>
-                <input type="submit" value="Add Article"/>
+                <input type="submit" value="Submit"/>
             
             </form>
     
@@ -63,6 +63,6 @@ if (isset($_SESSION['logged_in'])){
     header('Location: ./');
 }
 
-include $footer;
+include "..".$footer;
 
 ?>

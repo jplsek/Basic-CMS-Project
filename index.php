@@ -1,17 +1,17 @@
 <?php
 
+/* NOTE: THIS PAGE WILL BE REDESIGNED BEFORE VERSION 1.0 */
+
+include $_SERVER["DOCUMENT_ROOT"].'/cms/aSettings.php';
 include "assets/header.php";
 include "assets/nav.php";
-
+include "cms/article.php";
 include_once('cms/connect.php');
-include_once('cms/article.php');
 
 $article = new Article;
 $articles = $article->fetch_all();
 
 $articles = array_reverse($articles); // sorts the ID's from the highest, down, instead of from lowest, up. This is for newer posts (higher ID's) to be on the top or the "newest". Later, I might implement to use the timestamp of the articles instead.
-
-$editedMessage = "Edited: "; // The message when an article has been edited.
 
 ?>
 
@@ -25,7 +25,7 @@ if (isset($_GET['post'])){ // shows a specific post after a user clicks it
     $article = $article->fetch_data($id);
     
     $title = $article['article_title']; // separated these to make it easier to make a custom styled post
-    $date = date('m/d/Y', $article['article_timestamp']);
+    $date = date($dateFormat, $article['article_timestamp']);
     
     if ($article['article_edit_timestamp'] == 0){ // checks to see if the article was ever edited (0 means that it has NEVER been edited)
         $edited = "";
@@ -68,7 +68,7 @@ if (isset($_GET['post'])){ // shows a specific post after a user clicks it
     
     $id = $article['article_id']; // separated these to make it easier to make a custom styled post
     $title = $article['article_title'];
-    $date = date('m/d/Y', $article['article_timestamp']);
+    $date = date($dateFormat, $article['article_timestamp']);
     $summary = $article['article_summary'];
     
     if ($article['article_edit_timestamp'] == 0){ // checks to see if the article was ever edited (0 means that it has NEVER been edited)

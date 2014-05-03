@@ -68,7 +68,7 @@ if (isset($_SESSION['logged_in'])){
     }
     ?>
         
-    <form action="change.php" method="post">
+    <form method="post">
         
         Username:<br/>
         <input type="text" name="username" placeholder="Username" required/><br/><br/>

@@ -7,7 +7,7 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 * The CMS can allow you to upload, browse, and delete content (images, video, etc)
 
-* The CMS can allow you to edit static pages, like stylesheets, indexes, etc
+* The CMS can allow you to add, edit, and delete pages, like stylesheets, indexes, etc
 
 ## Installation
 1. **You must have a webserver with PHP version 5.5.0 or higher!**
@@ -18,7 +18,7 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 4. Put the "cms" folder into the docroot (or everything).
 
-5. Change the settings according your setup in /cms/settings.php
+5. Change the settings according your setup in /cms/settings.php AND /cms/aSettings.php
 
 6. You should use index.php in the root (NOT cms) for how to set up the 'blogging' portion. However, right now, this isn't very clear...
 
@@ -28,7 +28,7 @@ Username: admin
 Password: password
 
 ## The way it works (cms)
-example: cms/index.php
+example: /cms/add.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;opens headerCont.php (cms file, has stuff for the `<head>` tag)
 
@@ -45,11 +45,21 @@ example: cms/index.php
 (this is all set in settings.php)
 
 ## Currently working on:
-1. Add pages into docroot and subdirs (this will include file restructure outside the CMS)
+1. Make articles work nicely with the pages and easier to understand
 
-2. Make it nicer looking by default
+2. Ability to change article settings in the CMS
 
-3. Make installation easier?
+3. Make site header/footer optional
+
+4. Make it nicer looking by default (and consistent) and make the options more obvious
+
+5. More flexible addition of pages
+
+6. Make installation easier?
+
+7. 1.0?
+
+// date settings, title to new page
 
 Stretch goals (I don't care too much about these...):
 
@@ -59,5 +69,7 @@ Stretch goals (I don't care too much about these...):
 
 3. Switch to sqlite?
 
+## Bugs
+1. All of the $footer's decided to not follow the rules in functions.php in add/edit/delete.php
 
 If you find bugs, you can message me if you want to.

@@ -10,14 +10,6 @@ $remove = array("..", "/.");
 
 $disallow = array('.git', 'LICENSE', $dirUploads, 'cms'); // For directory searching, removes unwanted directories and files
 
-function strposa($haystack, $needle, $offset=0) { // uses strpoos with arrays
-    if(!is_array($needle)) $needle = array($needle);
-    foreach($needle as $query) {
-        if(strpos($haystack, $query, $offset) !== false) return true; // stop on first true result
-    }
-    return false;
-}
-
 if (isset($_SESSION['logged_in'])){
     //display add page
     
@@ -51,7 +43,7 @@ if (isset($_SESSION['logged_in'])){
     
     <form method="get">
 
-        <select name="fileSelect"> <!-- ABSOLUTE PATHS! -->
+        <select name="fileSelect" required>
                 <option value="">
                 </option>
                 
@@ -61,7 +53,7 @@ if (isset($_SESSION['logged_in'])){
                     if (!strposa($entry, $disallow)){ // if $entry does NOT contain $disallow, show the rest
                         if (!strposa(substr($entry, -2), $remove)) {
                             echo '<option value="'.$entry.'">
-                                 '.$entry.'
+                                 '.substr($entry, 2).'
                                   </option>
                                  ';
                         }
@@ -81,7 +73,7 @@ if (isset($_SESSION['logged_in'])){
 
     } else {
         
-        echo '<p>Editing File: '.$file.'</p>
+        echo '<p>Editing File: '.substr($file, 2).'</p>
               <form method="post">';
         
         if (strpos($file, ".html")) {

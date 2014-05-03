@@ -36,7 +36,7 @@ if (isset($_SESSION['logged_in'])){
                 <br/><br/>
             <?php } ?>
             
-            <form action="edit.php" method="get">
+            <form method="get">
             
                 <select name="id">
                     <option>
@@ -81,6 +81,6 @@ if (isset($_SESSION['logged_in'])){
     header('Location: ./');
 }
 
-include $footer;
+include "..".$footer;
 
 ?>

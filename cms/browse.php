@@ -12,11 +12,6 @@ if (isset($_SESSION['logged_in'])){
                 
     <a href="./">&larr; Back</a><br/><br/>
     
-    <script>
-        function clicked(e){
-            if(!confirm('Are you sure? This will be deleted permanently!'))e.preventDefault();
-        }
-    </script>
     <?php
     
     if ($handle = opendir($uploads)) {

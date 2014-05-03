@@ -16,7 +16,7 @@ if (isset($_SESSION['logged_in'])){
             
     <a href="./">&larr; Back</a><br/><br/>
     
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
         <label for="file">Filename:</label>
         <input type="file" name="file" id="file"><br/><br/>
         <input type="submit" name="submit" value="Submit">
