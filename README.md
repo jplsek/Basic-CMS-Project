@@ -14,7 +14,7 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 2. MYSQL must be installed.
 
-3. The docroot must be owned by the websever user!
+3. The docroot must be owned by the webserver user!
 
 4. Put the "cms" folder into the docroot (or everything).
 
@@ -27,10 +27,16 @@ Username: admin
 
 Password: password
 
-## The way it works (cms)
-example: /cms/add.php
+## The way it works (cms):
+example: /cms/addPage.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;opens headerCont.php (cms file, has stuff for the `<head>` tag)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens settings.php
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headcontent actual content
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens aSettings.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens header.php (your file, from `<html>` to an open `<head>` tag)
 
