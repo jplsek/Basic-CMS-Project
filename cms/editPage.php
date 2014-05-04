@@ -6,7 +6,7 @@ session_start();
 
 $dirUploads = substr($uploads, 3); // takes off the two periods and '/'
 
-$remove = array("..", "/.");
+$remove = array("..", "/.", "\.");
 
 $disallow = array('.git', 'LICENSE', $dirUploads, 'cms'); // For directory searching, removes unwanted directories and files
 

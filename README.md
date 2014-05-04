@@ -71,7 +71,7 @@ example: /cms/addPage.php
 
 7. 1.0?
 
-// date settings, title to new page
+// title to new page, cleaner upload.php
 
 Stretch goals (I don't care too much about these...):
 

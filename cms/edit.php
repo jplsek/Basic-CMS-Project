@@ -55,70 +55,71 @@ if (isset($_SESSION['logged_in'])){
         }
     } else {
     
-    if (isset($_GET['id'])){
-        $id = $_GET['id'];
-        $data = $article->fetch_data($id);
+        if (isset($_GET['id'])){
+            $id = $_GET['id'];
+            $data = $article->fetch_data($id);
+                    
+            //echo $title;
+            
+            ?>
+            
+            <form action="edit.php" method="post" autocomplete="off">
+            
+                <label>ID:</label><br/>
+                <input type="text" name="id" readonly value="<?php echo $data['article_id']; ?>"/><br/><br/>
                 
-        //echo $title;
-        
-        ?>
-        
-        <form action="edit.php" method="post" autocomplete="off">
-        
-            <label>ID:</label><br/>
-            <input type="text" name="id" readonly value="<?php echo $data['article_id']; ?>"/><br/><br/>
+                <label for="panelTitle">Title:</label><br/>
+                <input id="panelTitle" type="text" name="title" value="<?php echo $data['article_title']; ?>" required/><br/><br/>
+                
+                <label>Content:</label><br/>
+                <textarea rows="15" name="content" id="wys"><?php echo $data['article_content']; ?></textarea><br/><br/>
+                
+                <label for="panelSummary">Summary:</label><br/>
+                <textarea id="panelSummary" rows="11" name="summary" class="panelTextarea" maxlength="<?php echo $summmaryMax; ?>"><?php echo $data['article_summary']; ?></textarea><br/><br/>
+                
+                <label for="panelTags">Tags:</label><br/>
+                <input id="panelTags" type="text" name="tags" value="<?php echo $data['article_tags']; ?>"/><br/><br/>
+                
+                <input type="submit" value="Submit Edit" class="panelBtnBlue"/>
             
-            <label for="panelTitle">Title:</label><br/>
-            <input id="panelTitle" type="text" name="title" value="<?php echo $data['article_title']; ?>" required/><br/><br/>
+            </form>
             
-            <label>Content:</label><br/>
-            <textarea rows="15" name="content" id="wys"><?php echo $data['article_content']; ?></textarea><br/><br/>
+            <?php
             
-            <label for="panelSummary">Summary:</label><br/>
-            <textarea id="panelSummary" rows="11" name="summary" class="panelTextarea" maxlength="<?php echo $summmaryMax; ?>"><?php echo $data['article_summary']; ?></textarea><br/><br/>
+        } else {
+        
+            $articles = $article->fetch_all();
             
-            <label for="panelTags">Tags:</label><br/>
-            <input id="panelTags" type="text" name="tags" value="<?php echo $data['article_tags']; ?>"/><br/><br/>
+            $articles = array_reverse($articles); // sorts the ID's from the highest, down, instead of from lowest, up. This is for newer posts (higher ID's) to be on the top or the "newest". Later, I might implement to use the timestamp of the articles instead.
             
-            <input type="submit" value="Submit Edit" class="panelBtnBlue"/>
-        
-        </form>
-        
-        <?php
-        
-    } else {
-    
-        $articles = $article->fetch_all();
-        
-        $articles = array_reverse($articles); // sorts the ID's from the highest, down, instead of from lowest, up. This is for newer posts (higher ID's) to be on the top or the "newest". Later, I might implement to use the timestamp of the articles instead.
-        
-        ?>
-        
-        <p>Select a post to edit.</p>
-        
-        <form method="get">
-        
-            <select name="id">
-                <option>
-                </option>
-                <?php foreach ($articles as $article) { ?>
-                    <option value="<?php echo $article['article_id']; ?>">
-                        <?php echo $article['article_title']; ?>
+            ?>
+            
+            <p>Select a post to edit.</p>
+            
+            <form method="get">
+            
+                <select name="id">
+                    <option>
                     </option>
-                <?php } ?>
-            </select><br/><br/>
-            <input type="submit" value="Edit" class="panelBtnGreen"/>
-        
-        </form>
-        <br/>
-        
-        <?php if (isset($error)) { ?>
+                    <?php foreach ($articles as $article) { ?>
+                        <option value="<?php echo $article['article_id']; ?>">
+                            <?php echo $article['article_title']; ?>
+                        </option>
+                    <?php } ?>
+                </select><br/><br/>
+                <input type="submit" value="Edit" class="panelBtnGreen"/>
             
-            <small style="color:red;"><?php echo $error; ?></small>
-            <br/><br/>
+            </form>
+            <br/>
             
-        <?php }
-    }}
+            <?php if (isset($error)) { ?>
+                
+                <small style="color:red;"><?php echo $error; ?></small>
+                <br/><br/>
+                
+            <?php }
+        }
+    }
 } else {
     //redirect user
     header('Location: ./');

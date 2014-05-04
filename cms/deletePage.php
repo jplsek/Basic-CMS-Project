@@ -4,10 +4,10 @@ include "headContent.php";
 
 session_start();
 
-$remove = array("/.."); // for direcotries
-$remove2 = array("/."); // for files
+$remove = array("/..", "\.."); // for direcotries
+$remove2 = array("/.", "\.."); // for files
 
-$disallow = array('.git', 'LICENSE', $uploads, 'cms', '../..'); // For directory searching, removes unwanted directories and files
+$disallow = array('.git', 'LICENSE', $uploads, 'cms', '../..', '..\..'); // For directory searching, removes unwanted directories and files
 
 if (isset($_SESSION['logged_in'])){ ?>
     
