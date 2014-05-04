@@ -10,16 +10,14 @@ if (isset($_SESSION['logged_in'])){
     //display delete page
     
     ?>
-    <div style="float:left;">
+    <div class="panelLeft">
     
     <h1>Upload Files</h1>
-            
-    <a href="./">&larr; Back</a><br/><br/>
     
     <form method="post" enctype="multipart/form-data">
         <label for="file">Filename:</label>
-        <input type="file" name="file" id="file"><br/><br/>
-        <input type="submit" name="submit" value="Submit">
+        <input type="file" name="file" id="file"/><br/><br/>
+        <input type="submit" name="submit" value="Submit" class="panelBtnBlue"/>
     </form><br/>
     
     <?php
@@ -96,6 +94,6 @@ if (isset($_SESSION['logged_in'])){
     header('Location: ./');
 }
 
-include $footer;
+include 'footer.php';
 
 ?>

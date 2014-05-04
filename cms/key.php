@@ -1,6 +1,6 @@
 <?php
 
-$passEnc = '$2y$06$aMeZUrxEP1IeafXX46XHp.ex456d7yn.Uh1A03XCPh.098LD4NDb.';
+$passEnc = '$2y$06$sjq6kz2hOWWKSsbkkLK6sOByRC7QJ6rg/W4FYOLGGhGQZ9JY7fM1a';
 $user = 'admin';
 
 ?>

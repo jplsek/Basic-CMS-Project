@@ -10,8 +10,6 @@ if (isset($_SESSION['logged_in'])){
     
     <h1>Change Password</h1>
     
-    <a href="./">&larr; Back</a><br/><br/>
-    
     <?php
     if(isset($_POST['username'], $_POST['password'])){
         $usernameLogin = $_POST['username'];
@@ -42,12 +40,12 @@ if (isset($_SESSION['logged_in'])){
                     $passEncNew = password_hash($passNew, PASSWORD_BCRYPT, $options);
                     
                     $str = implode(file('key.php'));
-                    $fileOpen = fopen('key.php','w') or die ('Error editing file. Check permissions!');
+                    $fileOpen = fopen('key.php','w');
                     
                     $replace = str_replace($passEnc, $passEncNew, $str);
                     
                     fwrite($fileOpen, $replace);
-                    fclose($fileOpen) or die ("Error closing file! Check permissions!");
+                    fclose($fileOpen);
                     
                     session_destroy();
 
@@ -70,18 +68,19 @@ if (isset($_SESSION['logged_in'])){
         
     <form method="post">
         
-        Username:<br/>
-        <input type="text" name="username" placeholder="Username" required/><br/><br/>
+        <label for="panelUser">Username:</label><br/>
+        <input id="panelUser" type="text" name="username" placeholder="Username" required/><br/><br/>
         
-        Current Password:<br/>
-        <input type="password" name="password" placeholder="Current Password" required/><br/><br/>
+        <label for="panelPass">Current Password:</label><br/>
+        <input id="panelPass" type="password" name="password" placeholder="Current Password" required/><br/><br/>
         
-        New Password:<br/>
-        <input type="password" name="passwordNew" placeholder="New Password" required/><br/><br/>
+        <label for="panelNewPass">New Password:</label><br/>
+        <input id="panelNewPass" type="password" name="passwordNew" placeholder="New Password" required/><br/><br/>
         
-        Confirm New Password:<br/>
-        <input type="password" name="passwordConfirm" placeholder="Retype New Password" required/><br/><br/>
-        <input type="submit" value="Submit"/><br/>
+        <label for="panelCNewPass">Confirm New Password:</label><br/>
+        <input id="panelCNewPass" type="password" name="passwordConfirm" placeholder="Retype New Password" required/><br/><br/>
+        
+        <input type="submit" value="Submit" class="panelBtnBlue"/><br/>
         
     </form>
     
@@ -96,6 +95,6 @@ if (isset($_SESSION['logged_in'])){
     header('Location: ./');
 }
 
-include $footer;
+include 'footer.php';
 
 ?>

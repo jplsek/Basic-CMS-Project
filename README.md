@@ -38,26 +38,32 @@ example: /cms/addPage.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens aSettings.php
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens header.php (your file, from `<html>` to an open `<head>` tag)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens $header (your file, from `<html>` to an open `<head>` tag)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php actual content
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php cms content
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens nav.php (your file, ends `<head>` tag, and has your navigation, containers, etc)
 
-&nbsp;&nbsp;&nbsp;&nbsp;addPage.php actual content
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens header.php (cms header file)
 
-&nbsp;&nbsp;&nbsp;&nbsp;opens footer.php (your file, has the end of your containers, etc, and has the footer of your site)
+&nbsp;&nbsp;&nbsp;&nbsp;addPage.php cms content
+
+&nbsp;&nbsp;&nbsp;&nbsp;opens footer.php (cms footer file)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;footer.php cms content
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens $footer (your file, has the end of your containers, etc, and has the footer of your site)
 
 (this is all set in settings.php)
 
 ## Currently working on:
-1. Make articles work nicely with the pages and easier to understand
+1. Make site header/footer optional
 
 2. Ability to change article settings in the CMS
 
-3. Make site header/footer optional
+3. Make articles work nicely with the pages and easier to understand
 
-4. Make it nicer looking by default (and consistent) and make the options more obvious
+4. Welcome Page
 
 5. More flexible addition of pages
 
@@ -76,6 +82,6 @@ Stretch goals (I don't care too much about these...):
 3. Switch to sqlite?
 
 ## Bugs
-1. All of the $footer's decided to not follow the rules in functions.php in add/edit/delete.php
+1. All of the $footer's decided to not follow the rules in footer.php(>headcontent.php>settings.php) in add/edit/delete.php
 
 If you find bugs, you can message me if you want to.

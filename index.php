@@ -26,6 +26,7 @@ if (isset($_GET['post'])){ // shows a specific post after a user clicks it
     
     $title = $article['article_title']; // separated these to make it easier to make a custom styled post
     $date = date($dateFormat, $article['article_timestamp']);
+    $tags = $article['article_tags'];
     
     if ($article['article_edit_timestamp'] == 0){ // checks to see if the article was ever edited (0 means that it has NEVER been edited)
         $edited = "";
@@ -70,6 +71,7 @@ if (isset($_GET['post'])){ // shows a specific post after a user clicks it
     $title = $article['article_title'];
     $date = date($dateFormat, $article['article_timestamp']);
     $summary = $article['article_summary'];
+    $tags = $article['article_tags'];
     
     if ($article['article_edit_timestamp'] == 0){ // checks to see if the article was ever edited (0 means that it has NEVER been edited)
         $edited = "";

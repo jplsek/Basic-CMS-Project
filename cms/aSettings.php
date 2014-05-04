@@ -6,9 +6,9 @@ $footerA  = "/assets/footer.php"; // put your footer file here
 
 $title = "CMS"; // The default page title when creating new pages
 
-$dateFormat = "m/d/Y"; // The date format on an article
-
-$editedMessage = "Edited: "; // The message when an article has been edited.
+$dateFormat    = "m/d/Y"; // The date format on an article
+$editedMessage = "Edited: "; // The message when an article has been edited
+$summaryMax    = "530"; // The max amount of characters for the summary
 
 // Ignore this stuff...
 

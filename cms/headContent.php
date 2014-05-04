@@ -58,4 +58,7 @@ include $header;
     
 </script>
 
-<?php include $nav; ?>
+<?php
+    include $nav;
+    include 'header.php';
+?>

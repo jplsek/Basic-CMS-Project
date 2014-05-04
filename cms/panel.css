@@ -1,3 +1,49 @@
+/* This is bootstap inspired http://getbootstrap.com */
+a{
+    color:#428BCA;
+    text-decoration:none;
+}
+a:hover, a:focus{
+    color:#2A6496;
+    text-decoration:underline;
+}
+a:focus{
+    outline:thin dotted;
+    outline-offset:-2px;
+}
+h1,h2,h3,h4,h5{
+    font-weight:500;
+}
+.panelContainer{
+    background:#f2f2f2;
+    border:1px solid #e2e2e2;
+    border-radius:5px;
+    padding:10px;
+    font-family:sans-serif, helvetica, arial;
+    min-width:300px;
+}
+.panelContainer *, .panelContainer{
+    box-sizing:border-box;
+}
+.panelChoose{
+    float:left;
+    width:200px;
+    border-right: 1px solid rgb(212, 212, 212);
+}
+.panelTitle a{
+    padding:0 80px 0 15px;
+}
+ul.panelNav{
+    list-style:none;
+    padding-left:0px;
+}
+.panelNav li a{
+    padding:10px 15px;
+    display:block;
+}
+.panelContent{
+    margin-left:250px;
+}
 .panelRed{
     color:red;
 }
@@ -23,9 +69,8 @@
     display:none;
 }
 .browseImg{
-    max-width:50%;
+    width:100%;
     box-shadow:0 0 10px rgb(100,100,100);
-    margin:5px 0 0 10px;
 }
 .uploadRight{
     float:right;
@@ -47,12 +92,72 @@
 .panelClear{
     clear:both;
 }
+.panelContainer input, .panelContainer textarea, select{
+    box-shadow:rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+    text-decoration: none solid rgb(85, 85, 85);
+    border:1px solid rgb(204, 204, 204);
+    border-radius:4px;
+    padding:6px 12px; 
+    color:rgb(85, 85, 85);
+    background-color:rgb(255, 255, 255);
+}
+.panelContainer input:focus, .panelContainer textarea:focus {
+    border-color:#66afe9;
+}
+input.panelBtnBlue{
+    color:#fff;
+    cursor:pointer;
+    background-color:#428bca;
+    border-color:#357ebd;
+}
+input.panelBtnBlue:hover{
+    background-color:#3276B1;
+    border-color:#285E8E;
+}
+input.panelBtnGreen{
+    color:#fff;
+    cursor:pointer;
+    background-color:rgb(92,184,92);
+    border-color:rgb(76,174,76);
+}
+input.panelBtnGreen:hover{
+    background-color:rgb(71,164,71);
+    border-color:rgb(57,132,57);
+}
+input.panelBtnRed{
+    color:#fff;
+    cursor:pointer;
+    background:rgb(217, 83, 79);
+    border-color:rgb(212, 63, 58);
+}
+input.panelBtnRed:hover{
+    background-color:rgb(210, 50, 45);
+    border-color:rgb(172, 41, 37);
+}
 
 /* Dynamic rules */
 
-@media all and (max-width: 650px){
+@media all and (max-width: 1300px){
     .uploadRight{
         float:none;
         width:100%;
+    }
+    .panelLeft{
+        float:none;
+    }
+}
+@media all and (max-width: 550px){
+    .panelChoose{
+        width:100%;
+        float:none;
+        border-right:none;
+        border-bottom:1px solid rgb(212, 212, 212);
+        text-align:center;
+    }
+    .panelContent{
+        margin-left:0;
+    }
+    .panelTitle a{
+        padding:0 60px;
     }
 }

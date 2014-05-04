@@ -7,13 +7,11 @@ session_start();
 $remove = array("/.."); // for direcotries
 $remove2 = array("/."); // for files
 
-$disallow = array('.git', 'LICENSE', $uploads, 'cms'); // For directory searching, removes unwanted directories and files
+$disallow = array('.git', 'LICENSE', $uploads, 'cms', '../..'); // For directory searching, removes unwanted directories and files
 
 if (isset($_SESSION['logged_in'])){ ?>
     
     <h1>Delete Page</h1>
-                
-    <a href="./">&larr; Back</a><br/><br/>
     
     <?php
     
@@ -50,8 +48,9 @@ if (isset($_SESSION['logged_in'])){ ?>
     
     ?>
     
+        <p>Select a page to delete.</p>
+    
         <form method="post"> <!-- create folder with the name and add the index.php and content.php to the folder -->
-            Select what will be deleted:<br/>
             <select name="item">
                 <option value=""></option>
                 
@@ -77,7 +76,7 @@ if (isset($_SESSION['logged_in'])){ ?>
                 ?>
                 
             </select><br/><br/>
-            <input type="submit" onclick="clicked(event)" name="fileDelete" value="Delete" />
+            <input type="submit" onclick="clicked(event)" name="fileDelete" value="Delete" class="panelBtnRed"/>
         </form>
             
     <?php
@@ -87,5 +86,5 @@ if (isset($_SESSION['logged_in'])){ ?>
     header('Location: ./');
 }
 
-include $footer;
+include 'footer.php';
 ?>

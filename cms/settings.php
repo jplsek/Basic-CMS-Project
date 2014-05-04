@@ -16,7 +16,7 @@ $databaseName     = "cms"; // the database name within the database
 $databaseUsername = "root"; // the database username
 $databasePassword = ""; // the database username password
 
-// NOW EDIT aritcleSettings.php
+// NOW EDIT aSettings.php
 
 // ---Password Settings---
 

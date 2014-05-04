@@ -9,33 +9,16 @@ if (isset($_SESSION['logged_in'])){
     
     include "headContent.php";
     
-    ?>
+    echo "<h1>Welcome!</h1><p>This is the starter page. (WIP)</p>";
     
-    <h1>CMS</h1>
-    
-    <ol>
-        <li><a href="add.php">Add Article</a></li>
-        <li><a href="edit.php">Edit Article</a></li>
-        <li><a href="delete.php">Delete Article</a></li>
-        <br/>
-        <li><a href="addPage.php">Add Page</a></li>
-        <li><a href="editPage.php">Edit Page</a></li>
-        <li><a href="deletePage.php">Delete Page</a></li>
-        <br/>
-        <li><a href="upload.php">Upload Files</a></li>
-        <li><a href="browse.php">Browse Files</a></li>
-        <br/>
-        <li><a href="change.php">Change Password</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ol>
-    
-    <small>Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a> | Version 0.8.0</small>
-    
-    <?php
-    
-    include $footer;
+    include 'footer.php';
     
 } else {
+    
+    include 'aSettings.php';
+    
+    include $headerA;
+    include $navA;
     
     if(isset($_POST['username'], $_POST['password'])){
         $username = $_POST['username'];
@@ -66,46 +49,36 @@ if (isset($_SESSION['logged_in'])){
 
     ?>
     
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>CMS Log In Page</title>
-            <style>
-                *{
-                    box-sizing:border-box;
-                }
-                body{
-                    font-family:arial, helvetica, sans;
-                    background:#2F2F2F;
-                }
-                .logIn{
-                    text-align:center;
-                    margin:100px auto 0;
-                    max-width:400px;
-                    border:1px solid rgba(0,0,0,0.3);
-                    border-radius:10px;
-                    padding:10px;
-                    background:#F5F5F5;
-                }
-                .btn{
-                    color: #333;
-                    background-color: #FFF;
-                    border: 1px solid #CCC;
-                    cursor: pointer;
-                    border-radius: 4px;
-                    padding:5px 7px;
-                    text-decoration:none;
-                    font-size:1em;
-                    font-weight:400;
-                }
-                .btn:hover{
-                    background:#EBEBEB;
-                }
-            </style>
-        </head>
-        <body>
+    <style>
+        .logIn{
+            text-align:center;
+            margin:0 auto;
+            max-width:400px;
+            min-width:200px;
+            border:1px solid rgba(0,0,0,0.3);
+            border-radius:10px;
+            padding:10px;
+            background:#F5F5F5;
+        }
+        .btn{
+            color: #333;
+            background-color: #FFF;
+            border: 1px solid #CCC;
+            cursor: pointer;
+            border-radius: 4px;
+            padding:5px 7px;
+            text-decoration:none;
+            font-size:1em;
+            font-weight:400;
+        }
+        .btn:hover{
+            background:#EBEBEB;
+        }
+        a{
+            color:inherit;
+            text-decoration:none;
+        }
+    </style>
     
     <div class="logIn">
         <h1>Log In</h1>
@@ -113,7 +86,7 @@ if (isset($_SESSION['logged_in'])){
         <form action="./" method="post">
             <input type="text" name="username" placeholder="Username"/><br/><br/>
             <input type="password" name="password" placeholder="Password"/><br/><br/>
-            <a href="/" class="btn">Main Website</a>
+            <button type="button" class="btn"><a href="/">Main Website</a></button>
             <input type="submit" value="Login" class="btn"/><br/>
         </form>
         
@@ -123,11 +96,10 @@ if (isset($_SESSION['logged_in'])){
         
     </div>
     
-        </body>
-    </html>
 
     <?php
 
+    include $footerA;
 }
 
 ?>

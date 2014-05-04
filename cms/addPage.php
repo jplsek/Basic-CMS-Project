@@ -11,8 +11,6 @@ $disallow = array('.git', 'LICENSE', $uploads, 'cms'); // For directory searchin
 if (isset($_SESSION['logged_in'])){ ?>
     
     <h1>Add Page</h1>
-                
-    <a href="./">&larr; Back</a><br/><br/>
     
     <?php
     
@@ -33,25 +31,28 @@ if (isset($_SESSION['logged_in'])){ ?>
             
             mkdir($fullLocation, 0771);
             
-            echo '<p class="panelGreen">Created folder at: '.$dirName1.'<p>';
+            echo '<p class="panelGreen">Created folder at: '.$dirName1.'.<p>
+                  <p class="panelGreen">Created file: '.$fileIndex.' in '.$dirName1.'.<p>
+                  <p class="panelGreen">Created file: '.$fileName.' in '.$dirName1.'.<p>
+                 ';
             
-            $fileOpen = fopen($fullLocation.$fileIndex,'w') or die ('Error creating file! Check permissions!');
+            $fileOpen = fopen($fullLocation.$fileIndex,'w');
             fwrite($fileOpen,$index);
-            fclose($fileOpen) or die ("Error closing file! Check permissions!");
+            fclose($fileOpen);
             
-            $fileOpen = fopen($fullLocation.$fileName,'w') or die ('Error creating file! Check permissions!');
+            $fileOpen = fopen($fullLocation.$fileName,'w');
             fwrite($fileOpen,'<h1>'.$titlePage.'</h1>');
-            fclose($fileOpen) or die ("Error closing file! Check permissions!");
+            fclose($fileOpen);
             
             $str = implode(file($fullLocation.$fileIndex));
-            $fileOpen = fopen($fullLocation.$fileIndex,'w') or die ('Error editing file. Check permissions!');
+            $fileOpen = fopen($fullLocation.$fileIndex,'w');
             
             $replace = str_replace("ReplaceThisTitle", $titlePage, $str);
             
             fwrite($fileOpen, $replace);
-            fclose($fileOpen) or die ("Error closing file! Check permissions!");
+            fclose($fileOpen);
             
-            echo '<p>Would you like to edit <a href="editPage.php?fileSelect='.   $fullLocation.'content.html">'.$dirName1.'/content.html</a>?</p>
+            echo '<p>Would you like to <a href="editPage.php?fileSelect='.   $fullLocation.'content.html">edit '.$dirName1.'/content.html</a>?</p>
                   <p>You can link to it with:<br/>
                   <code>&lt;a href="'.$dirName1.'"&gt;<a href="'.$dirName1.'">'.$name.'</a>&lt;/a&gt;</code></p>
                  ';
@@ -60,20 +61,20 @@ if (isset($_SESSION['logged_in'])){ ?>
             
             if (!file_exists($dirName3.'.html')) {
                 
-                echo '<p class="panelBlue">Note: Destination folder already exists, only adding '.$dirName1.'.html</p>';
+                echo '<p class="panelBlue">Note: Destination folder already exists, only adding '.$dirName1.'.html.</p>';
                 
-                $fileOpen = fopen($dirName3.'.html','w') or die ('Error creating file! Check permissions!');
+                $fileOpen = fopen($dirName3.'.html','w');
                 fwrite($fileOpen,"");
-                fclose($fileOpen) or die ("Error closing file! Check permissions!");
+                fclose($fileOpen);
                 
-                echo '<p>Would you like to edit <a href="editPage.php?fileSelect='.$dirName3.'.html">'.$dirName2.'.html</a>?</p>
+                echo '<p>Would you like to <a href="editPage.php?fileSelect='.$dirName3.'.html">edit '.$dirName2.'.html</a>?</p>
                       <p>You can link to it with:<br/>
                       <code>&lt;a href="'.$dirName2.'.html"&gt;<a href="'.$dirName2.'.html">'.$name.'.html</a>&lt;/a&gt;</code></p>
                      ';
             
             } else {
-                echo '<p class="panelRed">Warning: <a href="'.$dirName1.'">'.$dirName2.'.html</a> exists</p>
-                      <p>Would you like to <a href="editPage.php?fileSelect='.$dirName3.'.html">edit</a> '.$dirName2.'.html or <a href="addPage.php">try again?</a></p>
+                echo '<p class="panelRed">Warning: <a href="'.$dirName2.'.html">'.$dirName2.'.html</a> exists.</p>
+                      <p>Would you like to <a href="editPage.php?fileSelect='.$dirName3.'.html">edit '.$dirName2.'.html</a> or <a href="addPage.php">try again?</a></p>
                       <p>You can link to it with:<br/>
                       <code>&lt;a href="'.$dirName2.'.html"&gt;<a href="'.$dirName2.'.html">'.$name.'.html</a>&lt;/a&gt;</code></p>
                      ';
@@ -85,12 +86,14 @@ if (isset($_SESSION['logged_in'])){ ?>
     ?>
     
         <form method="post"> <!-- create folder with the name and add the index.php and content.php to the folder -->
-            Page Title:<br/>
-            <input type="text" name="title" placeholder="Enter Page Title"/><br/><br/>
-            New File Name (without extensions):<br/>
-            <input type="text" name="fileName" placeholder="Enter New Link Name" required/><br/><br/>
-            Select where the link will be:<br/>
-            <select name="folder">
+            <label for="panelTitle">Page Title:</label><br/>
+            <input id="panelTitle" type="text" name="title" placeholder="Enter Page Title"/><br/><br/>
+            
+            <label for="panelName">New File Name (without extensions):</label><br/>
+            <input id="panelName" type="text" name="fileName" placeholder="Enter New Link Name" required/><br/><br/>
+            
+            <label for="panelFolder">Select where the link will be:</label><br/>
+            <select id="panelFolder" name="folder">
                 <option value=""></option>
                 
                 <?php
@@ -110,7 +113,8 @@ if (isset($_SESSION['logged_in'])){ ?>
                 ?>
                 
             </select><br/><br/>
-            <input type="submit" name="fileNew" value="Submit" />
+            
+            <input type="submit" name="fileNew" value="Submit" class="panelBtnBlue"/>
         </form>
             
     <?php
@@ -120,5 +124,5 @@ if (isset($_SESSION['logged_in'])){ ?>
     header('Location: ./');
 }
 
-include $footer;
+include 'footer.php';
 ?>

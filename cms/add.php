@@ -9,6 +9,12 @@ include_once('connect.php');
 if (isset($_SESSION['logged_in'])){
     //display add page
     
+    ?>
+    
+    <h1>Add Post</h1>
+    
+    <?php
+    
     if (isset($_POST['title'], $_POST['content'])) {
         $title = $_POST['title'];
         $content = $_POST['content'];
@@ -28,41 +34,41 @@ if (isset($_SESSION['logged_in'])){
             
             $query->execute();
             
-            header('Location: ./');
+            echo '<p class="panelGreen">Post Created!</p>
+                 ';
         }
+    } else {
+    
+        ?>
+        
+        <form method="post" autocomplete="off">
+            
+            <label for="panelTitle">Title:</label><br/>
+            <input id="panelTitle" type="text" name="title" placeholder="Title" required /><br/><br/>
+            
+            <label>Content:</label><br/>
+            <textarea rows="15" placeholder="Content" name="content" id="wys"></textarea><br/><br/>
+            
+            <label for="panelSummary">Summary:</label><br/>
+            <textarea id="panelSummary" rows="11" class="panelTextarea" placeholder="Summary" name="summary" maxlength="<?php echo $summmaryMax; ?>"></textarea><br/><br/>
+            
+            <label for="panelTags">Tags:</label><br/>
+            <input id="panelTags" type="text" name="tags" placeholder="Tags"/><br/><br/>
+            
+            <input type="submit" value="Submit" class="panelBtnBlue"/>
+        
+        </form>
+        
+        <?php if (isset($error)) { ?>
+            <small style="color:red;"><?php echo $error; ?></small>
+            <br/><br/>
+        <?php }
     }
-    
-    ?>
-            
-            <h1>Add Post</h1>
-            
-            <a href="./">&larr; Back</a><br/><br/>
-            
-            <?php if (isset($error)) { ?>
-                <small style="color:red;"><?php echo $error; ?></small>
-                <br/><br/>
-            <?php } ?>
-            
-            <form method="post" autocomplete="off">
-                
-                Title:<br/>
-                <input type="text" name="title" placeholder="Title" required /><br/><br/>
-                Content:<br/>
-                <textarea rows="15" placeholder="Content" name="content" id="wys"></textarea><br/><br/>
-                Summary:<br/>
-                <textarea rows="11" class="panelTextarea" placeholder="Summary" name="summary" maxlength="530"></textarea><br/><br/>
-                Tags:<br/>
-                <input type="text" name="tags" placeholder="Tags"/><br/><br/>
-                <input type="submit" value="Submit"/>
-            
-            </form>
-    
-    <?php
 } else {
     //redirect user
     header('Location: ./');
 }
 
-include "..".$footer;
+include 'footer.php';
 
 ?>
