@@ -93,8 +93,8 @@ if (isset($_SESSION['logged_in'])){ ?>
             <input id="panelName" type="text" name="fileName" placeholder="Enter New Link Name" required/><br/><br/>
             
             <label for="panelFolder">Select where the link will be:</label><br/>
-            <select id="panelFolder" name="folder">
-                <option value=""></option>
+            <select id="panelFolder" name="folder" required>
+                <option></option>
                 
                 <?php
                 

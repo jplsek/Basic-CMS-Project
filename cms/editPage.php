@@ -55,8 +55,7 @@ echo '</textarea><br /><br />
         <form method="get">
 
             <select name="fileSelect" required>
-                    <option value="">
-                    </option>
+                    <option></option>
                     
                     <?php
                     $dir = new RecursiveDirectoryIterator($root);

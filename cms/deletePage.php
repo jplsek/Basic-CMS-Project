@@ -51,8 +51,8 @@ if (isset($_SESSION['logged_in'])){ ?>
         <p>Select a page to delete.</p>
     
         <form method="post"> <!-- create folder with the name and add the index.php and content.php to the folder -->
-            <select name="item">
-                <option value=""></option>
+            <select name="item" required>
+                <option></option>
                 
                 <?php
                 

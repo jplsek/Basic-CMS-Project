@@ -39,9 +39,8 @@ if (isset($_SESSION['logged_in'])){
         
         <form method="get">
         
-            <select name="id">
-                <option>
-                </option>
+            <select name="id" required>
+                <option></option>
                 <?php foreach ($articles as $article) { ?>
                     <option value="<?php echo $article['article_id']; ?>">
                         <?php echo $article['article_title']; ?>
