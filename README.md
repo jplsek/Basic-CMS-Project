@@ -50,9 +50,9 @@ example: /cms/addPage.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;opens footer.php (cms footer file)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;footer.php cms content
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;footer.php cms content
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens $footer (your file, has the end of your containers, etc, and has the footer of your site)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens $footer (your file, has the end of your containers, etc, and has the footer of your site)
 
 (this is all set in settings.php)
 
