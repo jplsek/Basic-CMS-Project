@@ -40,11 +40,11 @@ example: /cms/addPage.php
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens $header (your file, from `<html>` to an open `<head>` tag)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php cms content
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php cms `<head>` content
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens nav.php (your file, ends `<head>` tag, and has your navigation, containers, etc)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opens header.php (cms header file)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headContent.php cms content
 
 &nbsp;&nbsp;&nbsp;&nbsp;addPage.php cms content
 
@@ -57,8 +57,6 @@ example: /cms/addPage.php
 (this is all set in settings.php)
 
 ## Currently working on:
-1. Make site header/footer optional
-
 2. Ability to change article settings in the CMS
 
 3. Make articles work nicely with the pages and easier to understand
@@ -71,8 +69,6 @@ example: /cms/addPage.php
 
 7. 1.0?
 
-// title to new page, cleaner upload.php
-
 Stretch goals (I don't care too much about these...):
 
 1. Make a 'first run' installer?
@@ -82,6 +78,6 @@ Stretch goals (I don't care too much about these...):
 3. Switch to sqlite?
 
 ## Bugs
-1. All of the $footer's decided to not follow the rules in footer.php(>headcontent.php>settings.php) in add/edit/delete.php
+1. All of the $footer's decided to not follow the rules in footer.php(>headcontent.php>settings.php) in add/edit/delete.php because of including connect.php (using a fix on line 25 of connect.php..)
 
 If you find bugs, you can message me if you want to.

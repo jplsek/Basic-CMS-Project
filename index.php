@@ -115,7 +115,7 @@ if (isset($_GET['post'])){ // shows a specific post after a user clicks it
 
 <?php
 
-    } // foreache
+    } // foreach
 } // end else
 
 include "assets/footer.php";

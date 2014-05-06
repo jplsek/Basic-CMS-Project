@@ -1,11 +1,13 @@
 <?php
 
+// CMS Specfic Settings
+
 // ---Website settings---
 
 // Note: This assumes that the cms is located in the docroot
-$header  = "/assets/header.php"; // put your header file here
-$nav     = "/assets/nav.php";    // put your navigation file here
-$footer  = "/assets/footer.php"; // put your footer file here
+$header  = "/assets/header.php"; // put your header file here (optional, can be empty)
+$nav     = "/assets/nav.php";    // put your navigation file here (optional, can be empty)
+$footer  = "/assets/footer.php"; // put your footer file here (optional, can be empty)
 $css     = "/assets/style.css";  // put your stylesheet file here
 $uploads = "/uploads"; // put your uploads folder here
 

@@ -11,7 +11,7 @@ if (isset($_SESSION['logged_in'])){
     <h1>Change Password</h1>
     
     <?php
-    if(isset($_POST['username'], $_POST['password'])){
+    if(isset($_POST['passwordSubmit'])){
         $usernameLogin = $_POST['username'];
         $passwordLogin = $_POST['password'];
         $passNew = $_POST['passwordNew'];
@@ -80,7 +80,7 @@ if (isset($_SESSION['logged_in'])){
         <label for="panelCNewPass">Confirm New Password:</label><br/>
         <input id="panelCNewPass" type="password" name="passwordConfirm" placeholder="Retype New Password" required/><br/><br/>
         
-        <input type="submit" value="Submit" class="panelBtnBlue"/><br/>
+        <input type="submit" value="Submit" name="passwordSubmit" class="panelBtnBlue"/><br/>
         
     </form>
     

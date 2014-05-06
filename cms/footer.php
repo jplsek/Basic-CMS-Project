@@ -3,6 +3,12 @@
     </div> <!-- panelContainer -->
 <?php
 
-include $footer;
+if ($footer != $root){ // checks if the $footer is empty
+    include $footer;
+} else {
+    echo '</body>
+          </html>
+         ';
+}
 
 ?>

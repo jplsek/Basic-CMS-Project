@@ -4,8 +4,8 @@ include "headContent.php";
 
 session_start();
 
-include_once('connect.php');
-include_once('article.php');
+include_once 'connect.php';
+include_once 'article.php';
 
 $article = new Article;
 

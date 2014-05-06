@@ -22,4 +22,7 @@ try {
     var_dump($e->getMessage());
 }
 
+if (!empty($root)){
+    $footer = $root.$footer; // hopefully a TEMP fix...
+}
 ?>

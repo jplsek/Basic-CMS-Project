@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5{
     padding:10px;
     font-family:sans-serif, helvetica, arial;
     min-width:300px;
+    color:rgb(50,50,50);
 }
 .panelContainer *, .panelContainer{
     box-sizing:border-box;
@@ -29,6 +30,9 @@ h1,h2,h3,h4,h5{
     float:left;
     width:200px;
     border-right: 1px solid rgb(212, 212, 212);
+}
+.panelChoose{
+    color:rgb(120,120,120);
 }
 .panelTitle a{
     padding:0 80px 0 15px;
@@ -45,13 +49,16 @@ ul.panelNav{
     margin-left:250px;
 }
 .panelRed{
-    color:red;
+    color:#F00
+}
+.panelRedDisable{
+    color:rgb(255, 115, 115);
 }
 .panelGreen{
-    color:green;
+    color:#008000;
 }
 .panelBlue{
-    color:blue;
+    color:#00F;
 }
 .panelLeft{
     float:left;

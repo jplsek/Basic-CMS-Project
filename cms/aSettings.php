@@ -1,5 +1,7 @@
 <?php
 
+// Article specific settings
+
 $headerA  = "/assets/header.php"; // put your header file here
 $navA     = "/assets/nav.php";    // put your navigation file here
 $footerA  = "/assets/footer.php"; // put your footer file here
