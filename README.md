@@ -9,7 +9,7 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 * The CMS can allow you to add, edit, and delete pages, like stylesheets, indexes, etc
 
-![alt text](https://github.com/jplsek/Basic-CMS-Project/tree/master/uploads/example.png "Image of the welcome page")
+![Screenshot of welcomepage](https://raw.githubusercontent.com/jplsek/Basic-CMS-Project/master/uploads/example.png)
 
 
 ## Installation
@@ -21,7 +21,7 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 4. Put the "cms" folder into the docroot (or everything).
 
-5. Change the settings according your setup in /cms/settings.php AND /cms/aSettings.php
+5. Change the settings according your setup in /cms/settings.php
 
 6. You should use index.php in the root (NOT cms) for how to set up the 'blogging' portion. However, right now, this isn't very clear...
 
@@ -60,17 +60,15 @@ example: /cms/addPage.php
 (this is all set in settings.php)
 
 ## Currently working on:
-2. Ability to change article settings in the CMS
+1. Make articles work nicely with the pages and easier to understand
 
-3. Make articles work nicely with the pages and easier to understand
+2. Welcome Page
 
-4. Welcome Page
+3. More flexible addition of pages
 
-5. More flexible addition of pages
+4. Make installation easier?
 
-6. Make installation easier?
-
-7. 1.0?
+5. 1.0?
 
 Stretch goals (I don't care too much about these...):
 
