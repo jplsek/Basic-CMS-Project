@@ -14,7 +14,17 @@ function strposa($haystack, $needle, $offset=0) { // uses strpoos with arrays
     return false;
 }
 
-// $root = $_SERVER["DOCUMENT_ROOT"]; // having a hard time making this work the way I want it to
+function replace($fileChange, $original, $new){ // (fileToOpen, StringContentToChange, StringContentToReplaceOriginal) - replaces string contentents in a file, there's probably a better way
+    $str = implode(file($fileChange));
+    $fileOpen = fopen($fileChange,'w');
+    
+    $replace = str_replace($original, $new, $str);
+    
+    fwrite($fileOpen, $replace);
+    fclose($fileOpen);
+}
+
+// $root = $_SERVER["DOCUMENT_ROOT"]; // having a hard time making this work the way I want it to (some strings are used a links)
 $root = "..";
 
 $header  = $root.$header;
@@ -98,12 +108,12 @@ if ($nav != $root){ // checks to see if $nav is empty
                 <li><a href="deletePage.php">Delete Page</a><br/></li>
                 <li><a href="upload.php">Upload Files</a></li>
                 <li><a href="browse.php">Browse Files</a><br/></li>
-                <li><a href="articleSettings.php" class="panelRedDisable">Article Settings</a></li>
+                <li><a href="articleSettings.php">Article Settings</a></li>
                 <li><a href="change.php">Change Password</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             
-            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.6</small>
+            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.7</small>
         </div>
         <div class="panelContent">
 

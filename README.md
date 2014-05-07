@@ -9,6 +9,9 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 * The CMS can allow you to add, edit, and delete pages, like stylesheets, indexes, etc
 
+![alt text](https://github.com/jplsek/Basic-CMS-Project/tree/master/uploads/example.png "Image of the welcome page")
+
+
 ## Installation
 1. **You must have a webserver with PHP version 5.5.0 or higher!**
 

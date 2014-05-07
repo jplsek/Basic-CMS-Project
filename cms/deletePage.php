@@ -1,6 +1,6 @@
 <?php
 
-include "headContent.php";
+require "headContent.php";
 
 session_start();
 
@@ -19,9 +19,9 @@ if (isset($_SESSION['logged_in'])){ ?>
         
         $name = $_POST['item']; // out: ../name/.. (or ../name.bar)
         
-        $dirName1 = substr($name, 2, -2); // out: /name(.bar)
-        $dirName2 = substr($name, 0, -2); // out: ../name
-        $fileName1 = substr($name, 2); // out: /name.bar
+        $dirName1  = substr($name, 2, -2); // out: /name(.bar)
+        $dirName2  = substr($name, 0, -2); // out: ../name
+        $fileName1 = substr($name, 2);     // out: /name.bar
         
         if (is_dir($name)) {
             

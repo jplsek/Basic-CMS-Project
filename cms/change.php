@@ -1,6 +1,6 @@
 <?php
 
-include "headContent.php";
+require "headContent.php";
 
 session_start();
 
@@ -14,7 +14,7 @@ if (isset($_SESSION['logged_in'])){
     if(isset($_POST['passwordSubmit'])){
         $usernameLogin = $_POST['username'];
         $passwordLogin = $_POST['password'];
-        $passNew = $_POST['passwordNew'];
+        $passNew  = $_POST['passwordNew'];
         $passConf = $_POST['passwordConfirm'];
             
         require 'key.php';
@@ -39,13 +39,7 @@ if (isset($_SESSION['logged_in'])){
     
                     $passEncNew = password_hash($passNew, PASSWORD_BCRYPT, $options);
                     
-                    $str = implode(file('key.php'));
-                    $fileOpen = fopen('key.php','w');
-                    
-                    $replace = str_replace($passEnc, $passEncNew, $str);
-                    
-                    fwrite($fileOpen, $replace);
-                    fclose($fileOpen);
+                    replace('key.php',$passEnc, $passEncNew);
                     
                     session_destroy();
 

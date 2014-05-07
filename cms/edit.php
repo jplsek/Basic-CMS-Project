@@ -1,6 +1,6 @@
 <?php
 
-include "headContent.php";
+require "headContent.php";
 
 session_start();
 
@@ -29,9 +29,12 @@ if (isset($_SESSION['logged_in'])){
         //echo 'Pass 1/2<br/>';
         
         if (empty($title) or empty($content)) {
+            
             $error = 'All fields are required.';
             echo $error;
+            
         } else {
+            
             $query = $pdo->prepare('UPDATE articles SET article_title = ?, article_content = ?, article_summary = ?, article_edit_timestamp = ?, article_tags = ? WHERE article_id = ?');
             
             $query->bindValue(1, $title);
@@ -53,9 +56,11 @@ if (isset($_SESSION['logged_in'])){
             echo '<p class="panelGreen">Post Editing Successful!</p>';
             
         }
+        
     } else {
     
         if (isset($_GET['id'])){
+            
             $id = $_GET['id'];
             $data = $article->fetch_data($id);
                     
@@ -119,6 +124,7 @@ if (isset($_SESSION['logged_in'])){
             <?php }
         }
     }
+    
 } else {
     //redirect user
     header('Location: ./');

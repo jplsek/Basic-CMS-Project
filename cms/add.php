@@ -1,6 +1,6 @@
 <?php
 
-include "headContent.php";
+require "headContent.php";
 
 session_start();
 
@@ -16,9 +16,9 @@ if (isset($_SESSION['logged_in'])){
     <?php
     
     if (isset($_POST['title'], $_POST['content'])) {
-        $title = $_POST['title'];
+        $title   = $_POST['title'];
         $content = $_POST['content'];
-        $tags = $_POST['tags'];
+        $tags    = $_POST['tags'];
         $summary = $_POST['summary'];
         
         if (empty($title) or empty($content)) {

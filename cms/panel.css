@@ -18,7 +18,7 @@ h1,h2,h3,h4,h5{
     background:#f2f2f2;
     border:1px solid #e2e2e2;
     border-radius:5px;
-    padding:10px;
+    padding:10px 40px 10px 10px;
     font-family:sans-serif, helvetica, arial;
     min-width:300px;
     color:rgb(50,50,50);
@@ -154,6 +154,9 @@ input.panelBtnRed:hover{
     }
 }
 @media all and (max-width: 550px){
+    .panelContainer{
+        padding:10px;
+    }
     .panelChoose{
         width:100%;
         float:none;

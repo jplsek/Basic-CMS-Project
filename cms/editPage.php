@@ -1,6 +1,6 @@
 <?php
 
-include "headContent.php";
+require "headContent.php";
 
 session_start();
 

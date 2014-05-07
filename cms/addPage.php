@@ -1,6 +1,6 @@
 <?php
 
-include "headContent.php";
+require "headContent.php";
 
 session_start();
 
@@ -17,10 +17,10 @@ if (isset($_SESSION['logged_in'])){ ?>
     if (isset($_POST['fileNew'])){
         
         $name = $_POST['fileName'];
-        $location = substr($_POST['folder'], 0, -2); // removes last 2 periods
+        $location  = substr($_POST['folder'], 0, -2); // removes last 2 periods
         $titlePage = $_POST['title'];
         $fileIndex = "index.php";
-        $fileName = "content.html";
+        $fileName  = "content.html";
         
         $fullLocation = $location.$name.'/'; // out: ../location/folderNameCreated
         $dirName1 = substr($location, 2).$name; // out: /location/folderNameCreated

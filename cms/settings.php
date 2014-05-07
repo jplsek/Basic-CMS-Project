@@ -18,8 +18,6 @@ $databaseName     = "cms"; // the database name within the database
 $databaseUsername = "root"; // the database username
 $databasePassword = ""; // the database username password
 
-// NOW EDIT aSettings.php
-
 // ---Password Settings---
 
 $scale = 6; // Password encryption scaling. 1 takes the least processing, 6 is good (default), 12 is excessive.
