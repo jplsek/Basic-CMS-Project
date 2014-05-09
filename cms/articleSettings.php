@@ -9,7 +9,7 @@ if (isset($_SESSION['logged_in'])){
     //display change password page
     ?>
     
-    <h1>Change Article Settings</h1>
+    <h1>Change Settings</h1>
     
     <?php
     
@@ -58,16 +58,16 @@ if (isset($_SESSION['logged_in'])){
             <input id="panelTitle" type="text" name="pageTitle" value="<?php echo $title; ?>" required/><br/><br/>
             
             <label for="panelDate">
-                Date 
+                Blog Date 
                 <a href="http://php.net/manual/en/function.date.php" title="PHP Date Manual" target="_blank">Format</a>
                 <small>(<?php echo date($dateFormat, time()); ?>)</small>:
             </label><br/>
             <input id="panelDate" type="text" name="dateFormat" value="<?php echo $dateFormat; ?>" required/><br/><br/>
             
-            <label for="panelEdit">Edited Message:</label><br/>
+            <label for="panelEdit">Blog Edited Message:</label><br/>
             <input id="panelNewEdit" type="text" name="editedMessage" value="<?php echo $editedMessage; ?>"/><br/><br/>
             
-            <label for="panelSummary">Summary Character Count:</label><br/>
+            <label for="panelSummary">Blog Summary Character Count:</label><br/>
             <input id="panelSummary" type="number" name="summaryCount" value="<?php echo $summaryMax; ?>"/><br/><br/>
             
             <input type="submit" value="Submit" name="change" class="panelBtnBlue"/><br/>

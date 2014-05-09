@@ -7,6 +7,9 @@ html{
     margin:0 auto;
     padding:10px;
 }
+
+/* The post style to copy or build on */
+
 .post{
     width:800px;
     margin:0 auto 20px;
@@ -14,8 +17,9 @@ html{
     padding:1em; border-radius:5px;
 }
 .postTitle{
-    font-size:1.5em;
+    font-size:35px;
     float:left;
+    text-transform:capitalize;
 }
 .postDate{
     float:right;
@@ -25,6 +29,14 @@ html{
     font-size:0.8rem;
     font-style:italic;
 }
+.postContent{
+    word-wrap: break-word;
+}
 .postFooter{
     text-align:right;
+}
+.postTags{
+    float:left;
+    font-size:0.8rem;
+    font-style:italic;
 }

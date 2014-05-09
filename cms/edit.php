@@ -85,7 +85,7 @@ if (isset($_SESSION['logged_in'])){
                 <label for="panelTags">Tags:</label><br/>
                 <input id="panelTags" type="text" name="tags" value="<?php echo $data['article_tags']; ?>"/><br/><br/>
                 
-                <input type="submit" value="Submit Edit" class="panelBtnBlue"/>
+                <input type="submit" value="Submit" class="panelBtnBlue"/>
             
             </form>
             

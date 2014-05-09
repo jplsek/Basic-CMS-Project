@@ -1,12 +1,12 @@
 <?php
 
-include "settings.php";
+include_once "settings.php";
 
 try {
     $pdo = new PDO('mysql:host='.$hostname, $databaseUsername, $databasePassword);
     $pdo->query('create database '.$databaseName);
     $pdo->query('use '.$databaseName);
-    $sql = "CREATE TABLE articles(
+    $sql = "CREATE TABLE IF NOT EXISTS articles(
             article_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
             article_title VARCHAR(255) NOT NULL,
             article_content TEXT NOT NULL,
@@ -22,7 +22,4 @@ try {
     var_dump($e->getMessage());
 }
 
-if (!empty($root)){
-    $footer = $root.$footer; // hopefully a TEMP fix...
-}
 ?>

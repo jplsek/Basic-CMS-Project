@@ -1,5 +1,7 @@
 <?php
 
+include_once 'connect.php';
+
 class Article {
     public function fetch_all(){
         global $pdo;
@@ -22,5 +24,7 @@ class Article {
     }
 }
 
+$article = new Article;
+$articles = $article->fetch_all();
 
 ?>

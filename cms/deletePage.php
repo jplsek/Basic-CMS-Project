@@ -7,7 +7,7 @@ session_start();
 $remove = array("/..", "\.."); // for direcotries
 $remove2 = array("/.", "\."); // for files
 
-$disallow = array('.git', 'LICENSE', $uploads, 'cms', '../..', '..\..', 'README.md'); // For directory searching, removes unwanted directories and files
+$disallow = array('.git', 'LICENSE', $uploads, 'cms', '../..', '..\..', 'README.md', $blog); // For directory searching, removes unwanted directories and files
 
 if (isset($_SESSION['logged_in'])){ ?>
     
@@ -29,13 +29,14 @@ if (isset($_SESSION['logged_in'])){ ?>
                $files = array_diff(scandir($dir), array('.','..'));
                 foreach ($files as $file) {
                     (is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file");
+                    echo '<p class="panelGreen">Deleted: '.substr($dir, 2).$file.'</p>';
                 }
                 return rmdir($dir);
             }
             
             deltree($dirName2);
             
-            echo '<p class="panelGreen">Directory deleted: '.$dirName1.'</p>';
+            echo '<p class="panelGreen">Deleted: '.$dirName1.'</p>';
             
         } else {
             

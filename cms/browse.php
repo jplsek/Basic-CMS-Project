@@ -34,7 +34,7 @@ if (isset($_SESSION['logged_in'])){
                     <input type="text" name="delete" value="'.$entry.'" readonly class="browseInputDelete"/>
                     <input type="submit" onclick="clicked(event)" value="Delete File" class="panelBtnRed"/>
                 </form><br/>
-                <img class="browseImg" src="'.$dir.'/'.$entry.'"/><br/>
+                <img class="browseImg" src="'.$dir.'/'.$entry.'" alt=""/><br/>
                 <p>You can show it with: 
                     <span class="panelBlue">
                         <code>

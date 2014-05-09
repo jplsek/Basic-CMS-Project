@@ -67,10 +67,8 @@ ul.panelNav{
     float:right;
 }
 .panelBrowse{
-    border:1px solid rgba(0,0,0,0.4);
     padding:20px;
     margin-bottom:20px;
-    border-radius:5px;
 }
 .browseInputDelete{
     display:none;

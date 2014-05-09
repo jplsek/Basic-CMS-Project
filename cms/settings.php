@@ -10,6 +10,7 @@ $nav     = "/assets/nav.php";    // put your navigation file here (optional, can
 $footer  = "/assets/footer.php"; // put your footer file here (optional, can be empty)
 $css     = "/assets/style.css";  // put your stylesheet file here
 $uploads = "/uploads"; // put your uploads folder here
+$blog    = "/blog"; // put your blog folder here (optional, only needed if blogging)
 
 // ---Database Settings---
 

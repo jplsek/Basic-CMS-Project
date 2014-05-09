@@ -21,21 +21,7 @@ if (isset($_SESSION['logged_in'])){
     
     if (isset($_GET['fileSelect'])){
         $file = $_GET['fileSelect'];
-        
-        echo '<label for="sc">Editing File: '.substr($file, 2).'</label><br/>
-              <form method="post">';
-        
-        if (strpos($file, ".html")) {
-echo '<textarea class="panelTextarea" name="fileEdit" id="wys">'; // Shows WYSIWYG editor & CANNOT have newlines under the tag!
-        } else {
-echo '<textarea class="panelTextarea" name="fileEdit" id="sc">'; // Shows source code instead & CANNOT have newlines under the tag!
-        }
-print (implode("",file($file))); // Cannot have tabs!!
-echo '</textarea><br /><br />
-          <input type="submit" value="Save File" name="changeFile" class="panelBtnBlue"/>
-          </form>';
-        
-        //echo $file; //debug
+        $fileRoot = substr($file, 2); // removes first 2 periods
         
         if (isset($_POST['changeFile'])) {
             $slash = stripslashes($_POST['fileEdit']);
@@ -44,6 +30,36 @@ echo '</textarea><br /><br />
             fclose($fileOpen);
             
             echo '<p class="panelGreen">Edit successful!</p>';
+            
+            if (strpos($fileRoot, 'content.html')){
+                
+                $fileRootDir = substr($fileRoot, 0, -12);
+                
+                echo '<p>Would you like to view <a target="_blank" href="'.$fileRootDir.'">'.$fileRootDir.'</a> or <a href="editPage.php">edit another page</a>?</p>';
+                
+            } else {
+            
+                echo '<p>Would you like to view <a target="_blank" href="'.$fileRoot.'">'.$fileRoot.'</a> or <a href="editPage.php">edit another page</a>?</p>';
+                
+            }
+            
+        } else {
+        
+            echo '<label for="sc">Editing File: '.$fileRoot.'</label><br/>
+                  <form method="post">';
+            
+            if (strpos($file, ".html")) {
+echo '<textarea class="panelTextarea" name="fileEdit" id="wys">'; // Shows WYSIWYG editor & CANNOT have newlines under the tag!
+        } else {
+echo '<textarea class="panelTextarea" name="fileEdit" id="sc">'; // Shows source code instead & CANNOT have newlines under the tag!
+        }
+print (implode("",file($file))); // Cannot have tabs!!
+echo '</textarea><br /><br />
+              <input type="submit" value="Save File" name="changeFile" class="panelBtnBlue"/>
+              </form>';
+            
+            //echo $file; //debug
+            
         }
         
     } else {

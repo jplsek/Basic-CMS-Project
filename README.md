@@ -9,21 +9,29 @@ This was a learning experience. You can use it if you want, but be prepared for 
 
 * The CMS can allow you to add, edit, and delete pages, like stylesheets, indexes, etc
 
+* If blogging: An (almost) empty canvas to create your own theme (check assets/style.css)
+
 ![Screenshot of welcomepage](https://raw.githubusercontent.com/jplsek/Basic-CMS-Project/master/uploads/example.png)
 
 
 ## Installation
 1. **You must have a webserver with PHP version 5.5.0 or higher!**
 
-2. MYSQL must be installed.
+2. MYSQL must be installed if blogging.
 
-3. The docroot must be owned by the webserver user!
+3. The docroot must be owned by the webserver user.
 
-4. Put the "cms" folder into the docroot (or everything).
+4. Put the "cms" folder (and "blog" folder if blogging) into the docroot (or everything).
 
 5. Change the settings according your setup in /cms/settings.php
 
-6. You should use index.php in the root (NOT cms) for how to set up the 'blogging' portion. However, right now, this isn't very clear...
+6. If blogging...
+
+7. Once the CMS in installed, login and change the 'Settings' arcordingly.
+
+8. Check index.php for an example of setting up posts.
+
+9. Done?
 
 ## Credentials:
 Username: admin
@@ -60,15 +68,13 @@ example: /cms/addPage.php
 (this is all set in settings.php)
 
 ## Currently working on:
-1. Make articles work nicely with the pages and easier to understand
+1. Welcome Page
 
-2. Welcome Page
+2. Make installation easier?
 
-3. More flexible addition of pages
+3. 1.0?
 
-4. Make installation easier?
-
-5. 1.0?
+4. Session timeout?
 
 Stretch goals (I don't care too much about these...):
 
@@ -79,6 +85,5 @@ Stretch goals (I don't care too much about these...):
 3. Switch to sqlite?
 
 ## Bugs
-1. All of the $footer's decided to not follow the rules in footer.php(>headcontent.php>settings.php) in add/edit/delete.php because of including connect.php (using a fix on line 25 of connect.php..)
 
 If you find bugs, you can message me if you want to.

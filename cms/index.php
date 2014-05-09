@@ -11,6 +11,8 @@ if (isset($_SESSION['logged_in'])){
     
     echo "<h1>Welcome!</h1><p>This is the starter page. (WIP)</p>";
     
+    // edit recent article, edit recent pages?, buttons to do stuff from sidebar
+    
     include 'footer.php';
     
 } else {

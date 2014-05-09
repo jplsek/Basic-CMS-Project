@@ -2,7 +2,7 @@
 
 // This is pretty much the header file of the CMS
 
-require "settings.php";
+include_once "settings.php";
 
 // Functions and strings for multiple files and other checks
 
@@ -32,15 +32,16 @@ $nav     = $root.$nav;
 $footer  = $root.$footer;
 $css     = $root.$css;
 $uploads = $root.$uploads;
+$blog    = $root.$blog;
 
 $index = '
 <?php
-    include $_SERVER["DOCUMENT_ROOT"]."/cms/aSettings.php";
-    $pageTitle = "ReplaceThisTitle - ".$title; // Dont change this, used in addPage.php
-    include $headerA;
-    include $navA;
-    include "content.html";
-    include $footerA;
+include $_SERVER["DOCUMENT_ROOT"]."/cms/aSettings.php";
+$pageTitle = "ReplaceThisTitle - ".$title; // Dont change this, used in addPage.php
+include $headerA;
+include $navA;
+include "content.html";
+include $footerA;
 ?>
 ';
 
@@ -108,12 +109,12 @@ if ($nav != $root){ // checks to see if $nav is empty
                 <li><a href="deletePage.php">Delete Page</a><br/></li>
                 <li><a href="upload.php">Upload Files</a></li>
                 <li><a href="browse.php">Browse Files</a><br/></li>
-                <li><a href="articleSettings.php">Article Settings</a></li>
+                <li><a href="articleSettings.php">Settings</a></li>
                 <li><a href="change.php">Change Password</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             
-            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.7</small>
+            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.8</small>
         </div>
         <div class="panelContent">
 
