@@ -67,8 +67,7 @@ ul.panelNav{
     float:right;
 }
 .panelBrowse{
-    padding:20px;
-    margin-bottom:20px;
+    margin-bottom:40px;
 }
 .browseInputDelete{
     display:none;
@@ -102,12 +101,15 @@ ul.panelNav{
     text-decoration: none solid rgb(85, 85, 85);
     border:1px solid rgb(204, 204, 204);
     border-radius:4px;
-    padding:6px 12px; 
+    padding:6px 12px;
     color:rgb(85, 85, 85);
     background-color:rgb(255, 255, 255);
 }
 .panelContainer input:focus, .panelContainer textarea:focus {
     border-color:#66afe9;
+}
+.panelContainer input[type="text"], .panelContainer input[type="password"]{
+    width:100%;
 }
 input.panelBtnBlue{
     color:#fff;

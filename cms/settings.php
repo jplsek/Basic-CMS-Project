@@ -1,16 +1,10 @@
 <?php
 
-// CMS Specfic Settings
+// ---CMS Specfic Settings---
 
-// ---Website settings---
+// Note: This assumes that the cms folder is located in the docroot
 
-// Note: This assumes that the cms is located in the docroot
-$header  = "/assets/header.php"; // put your header file here (optional, can be empty)
-$nav     = "/assets/nav.php";    // put your navigation file here (optional, can be empty)
-$footer  = "/assets/footer.php"; // put your footer file here (optional, can be empty)
-$css     = "/assets/style.css";  // put your stylesheet file here
-$uploads = "/uploads"; // put your uploads folder here
-$blog    = "/blog"; // put your blog folder here (optional, only needed if blogging)
+$cssS = "/assets/style.css";  // put your stylesheet file here, used for styling WYSIWYG editor
 
 // ---Database Settings---
 

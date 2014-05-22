@@ -62,7 +62,7 @@ if (isset($_SESSION['logged_in'])){
             padding:10px;
             background:#F5F5F5;
         }
-        .btn{
+        .logIn .btn{
             color: #333;
             background-color: #FFF;
             border: 1px solid #CCC;
@@ -73,10 +73,10 @@ if (isset($_SESSION['logged_in'])){
             font-size:1em;
             font-weight:400;
         }
-        .btn:hover{
+        .logIn .btn:hover{
             background:#EBEBEB;
         }
-        a{
+        .logIn a{
             color:inherit;
             text-decoration:none;
         }

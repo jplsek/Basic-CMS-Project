@@ -6,7 +6,7 @@ session_start();
 
 $remove = array("/..", "\..");
 
-$disallow = array('.git', 'LICENSE', $uploads, 'cms'); // For directory searching, removes unwanted directories and files
+$disallow = array('.git', 'LICENSE', $uploads, 'cms', $blog); // For directory searching, removes unwanted directories and files
 
 if (isset($_SESSION['logged_in'])){ ?>
     

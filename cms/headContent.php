@@ -1,6 +1,4 @@
-<?php 
-
-// This is pretty much the header file of the CMS
+<?php
 
 include_once "settings.php";
 
@@ -17,22 +15,25 @@ function strposa($haystack, $needle, $offset=0) { // uses strpoos with arrays
 function replace($fileChange, $original, $new){ // (fileToOpen, StringContentToChange, StringContentToReplaceOriginal) - replaces string contentents in a file, there's probably a better way
     $str = implode(file($fileChange));
     $fileOpen = fopen($fileChange,'w');
-    
+
     $replace = str_replace($original, $new, $str);
-    
+
     fwrite($fileOpen, $replace);
     fclose($fileOpen);
 }
 
 // $root = $_SERVER["DOCUMENT_ROOT"]; // having a hard time making this work the way I want it to (some strings are used a links)
+
+include 'aSettings.php';
+
 $root = "..";
 
-$header  = $root.$header;
-$nav     = $root.$nav;
-$footer  = $root.$footer;
-$css     = $root.$css;
-$uploads = $root.$uploads;
-$blog    = $root.$blog;
+$header  = $root.$headerS;
+$nav     = $root.$navS;
+$footer  = $root.$footerS;
+$css     = $root.$cssS;
+$uploads = $root.$uploadsS;
+$blog    = $root.$blogS;
 
 $index = '
 <?php
@@ -49,22 +50,20 @@ if(!is_dir($uploads)){
     mkdir($uploads, 0771);
 }
 
-include 'aSettings.php';
-
 if ($header != $root){ // checks to see if the $header is empty
     include $header;
 } else {
-    
+
     ?>
-    
+
     <!DOCTYPE html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
             <title>CMS</title>
             <meta name="viewport" content="width=device-width">
-    
+
     <?php
-    
+
 }
 
 ?>
@@ -72,7 +71,7 @@ if ($header != $root){ // checks to see if the $header is empty
 <link rel="stylesheet" href="panel.css"/>
 <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 <script>
-    
+
     tinymce.init({ // The wysiwyg editor
         selector: "textarea#wys", // Selects specific text area
         plugins: "code autolink link importcss", // shows source, pasting links, uses website style
@@ -83,13 +82,13 @@ if ($header != $root){ // checks to see if the $header is empty
     function clicked(e){
         if(!confirm('Are you sure? This will be deleted permanently!'))e.preventDefault();
     }
-    
+
 </script>
 
 <?php
 
 if ($nav != $root){ // checks to see if $nav is empty
-    include $nav; 
+    include $nav;
 } else {
     echo '</head>';
 }
@@ -99,7 +98,7 @@ if ($nav != $root){ // checks to see if $nav is empty
 <div class="panelContainer">
     <div class="panelChoose">
         <h1 class="panelTitle"><a href="./">CMS</a></h1>
-            
+
             <ul class="panelNav">
                 <li><a href="add.php">Add Article</a></li>
                 <li><a href="edit.php">Edit Article</a></li>
@@ -113,8 +112,7 @@ if ($nav != $root){ // checks to see if $nav is empty
                 <li><a href="change.php">Change Password</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
-            
-            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.8</small>
+
+            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.9</small>
         </div>
         <div class="panelContent">
-

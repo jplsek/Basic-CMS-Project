@@ -18,14 +18,26 @@ if (isset($_SESSION['logged_in'])){
         $titleNew         = $_POST['pageTitle'];
         $dateFormatNew    = $_POST['dateFormat'];
         $editedMessageNew = $_POST['editedMessage'];
-        $summaryMaxNew    = $_POST['summaryCount'];
+        $summaryMaxNew   = $_POST['summaryCount'];
+        $headerASNew     = $_POST['articleHeader'];
+        $navASNew       = $_POST['articleNav'];
+        $blogASNew     = $_POST['articleBlog'];
+        $footerASNew  = $_POST['articleFooter'];
         
         replace('aSettings.php', $title, $titleNew);
         replace('aSettings.php', $dateFormat, $dateFormatNew);
         replace('aSettings.php', $editedMessage, $editedMessageNew);
         replace('aSettings.php', $summaryMax, $summaryMaxNew);
+        replace('aSettings.php', $headerAS, $headerASNew);
+        replace('aSettings.php', $navAS, $navASNew);
+        replace('aSettings.php', $blogAS, $blogASNew);
+        replace('aSettings.php', $footerAS, $footerASNew);
         
         echo '<p class="panelGreen">Change Successful!</p>
+              <p>Article header location has been changed to: '.$headerASNew.'</p>
+              <p>Article Navigation location has been changed to: '.$navASNew.'</p>
+              <p>Article Blog location has been changed to: '.$blogASNew.'</p>
+              <p>Article Footer has been changed to: '.$footerASNew.'</p>
               <p>Page title has been changed to: '.$titleNew.'</p>
               <p>Date format has been changed to: '.$dateFormatNew.'</p>
               <p>Edited message has been changed to: '.$editedMessageNew.'</p>
@@ -40,8 +52,16 @@ if (isset($_SESSION['logged_in'])){
         replace('aSettings.php', $dateFormat, $dateFormatDefault);
         replace('aSettings.php', $editedMessage, $editedMessageDefault);
         replace('aSettings.php', $summaryMax, $summaryMaxDefault);
+        replace('aSettings.php', $headerAS, $headerASDefault);
+        replace('aSettings.php', $navAS, $navASDefault);
+        replace('aSettings.php', $blogAS, $blogASDefault);
+        replace('aSettings.php', $footerAS, $footerASDefault);
         
         echo '<p class="panelGreen">Change Successful!</p>
+              <p>Article header location has been changed to: '.$headerASDefault.'</p>
+              <p>Article Navigation location has been changed to: '.$navASDefault.'</p>
+              <p>Article Blog location has been changed to: '.$blogASDefault.'</p>
+              <p>Article Footer has been changed to: '.$footerASDefault.'</p>
               <p>Page title has been changed to: '.$titleDefault.'</p>
               <p>Date format has been changed to: '.$dateFormatDefault.'</p>
               <p>Edited message has been changed to: '.$editedMessageDefault.'</p>
@@ -53,6 +73,18 @@ if (isset($_SESSION['logged_in'])){
         ?>
             
         <form method="post">
+            
+            <label for="articleHeader">Header Location:</label><br/>
+            <input id="articleHeader" type="text" name="articleHeader" value="<?php echo $headerAS; ?>"/><br/><br/>
+            
+            <label for="articleNav">Navigation Location:</label><br/>
+            <input id="articleNav" type="text" name="articleNav" value="<?php echo $navAS; ?>"/><br/><br/>
+            
+            <label for="articleBlog">Blog Location (folder):</label><br/>
+            <input id="articleBlog" type="text" name="articleBlog" value="<?php echo $blogAS; ?>"/><br/><br/>
+            
+            <label for="articleFooter">Footer Location:</label><br/>
+            <input id="articleFooter" type="text" name="articleFooter" value="<?php echo $footerAS; ?>"/><br/><br/>
             
             <label for="panelTitle">Page Title:</label><br/>
             <input id="panelTitle" type="text" name="pageTitle" value="<?php echo $title; ?>" required/><br/><br/>

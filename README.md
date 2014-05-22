@@ -68,13 +68,38 @@ example: /cms/addPage.php
 (this is all set in settings.php)
 
 ## Currently working on:
-1. Welcome Page
 
-2. Make installation easier?
+1. Create a better functioning settings changer
 
-3. 1.0?
+1. Combine edit article / delete article and edit page / delete page -- list articles / pages similar to 'browse files'
 
-4. Session timeout?
+2. Make tags work
+
+3. Welcome Page
+
+4. Make installation easier?
+
+5. 1.0?
+
+6. Session timeout?
+
+Notes from quick usage test from a friend and self notes:
+
+* Remove summary (get $summary from content)
+
+* ID's, gray them out because they are readonly
+
+* Explain how to insert tags properly
+
+* Add a 'copy' button next to links to insert (also find a way to make this work properly when pasteing into WYSIWYG editor)
+
+* Remove unnecessary slashes in links...
+
+* Add a preview for posts and pages when editing
+
+* Create only a file explanation
+
+* Continue editing button for pages / articles (after adding and editing them)
 
 Stretch goals (I don't care too much about these...):
 

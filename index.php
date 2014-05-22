@@ -14,11 +14,11 @@ include "assets/nav.php"; // navigation
 
 if (isset($_GET['post'])){ // if a post is clicked, show the singular post
 
-    include 'blog/post.php';
+    include $blogA.'/post.php';
 
 } else {
 
-    include 'blog/articles.php'; // else, show all the posts
+    include $blogA.'/articles.php'; // else, show all the posts
 
 }
 
