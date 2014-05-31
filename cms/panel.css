@@ -1,20 +1,20 @@
 /* This is bootstap inspired http://getbootstrap.com */
-a{
+#panelContainer a{
     color:#428BCA;
     text-decoration:none;
 }
-a:hover, a:focus{
+#panelContainer a:hover,#panelContainer a:focus{
     color:#2A6496;
     text-decoration:underline;
 }
-a:focus{
+#panelContainer a:focus{
     outline:thin dotted;
     outline-offset:-2px;
 }
-h1,h2,h3,h4,h5{
+#panelContainer h1, #panelContainer h2,#panelContainer h3,#panelContainer h4,#panelContainer h5{
     font-weight:500;
 }
-.panelContainer{
+#panelContainer{
     background:#f2f2f2;
     border:1px solid #e2e2e2;
     border-radius:5px;
@@ -23,80 +23,83 @@ h1,h2,h3,h4,h5{
     min-width:300px;
     color:rgb(50,50,50);
 }
-.panelContainer *, .panelContainer{
+#panelContainer *, #panelContainer{
     box-sizing:border-box;
 }
-.panelChoose{
+#panelContainer .panelChoose{
     float:left;
     width:200px;
     border-right: 1px solid rgb(212, 212, 212);
 }
-.panelChoose{
+#panelContainer .panelChoose{
     color:rgb(120,120,120);
 }
-.panelTitle a{
+#panelContainer .panelTitle a{
     padding:0 80px 0 15px;
 }
-ul.panelNav{
+#panelContainer ul.panelNav{
     list-style:none;
     padding-left:0px;
 }
-.panelNav li a{
+#panelContainer .panelNav li a{
     padding:10px 15px;
     display:block;
 }
-.panelContent{
+#panelContainer .panelContent{
     margin-left:250px;
 }
-.panelRed{
+#panelContainer .panelRed{
     color:#F00
 }
-.panelRedDisable{
+#panelContainer .panelRedDisable{
     color:rgb(255, 115, 115);
 }
-.panelGreen{
+#panelContainer .panelGreen{
     color:#008000;
 }
-.panelBlue{
+#panelContainer .panelBlue{
     color:#00F;
 }
-.panelLeft{
+#panelContainer .panelLeft{
     float:left;
 }
-.panelRight{
+#panelContainer .panelRight{
     float:right;
 }
-.panelBrowse{
+#panelContainer .panelBrowse{
     margin-bottom:40px;
 }
-.browseInputDelete{
+#panelContainer .browseInputDelete{
     display:none;
 }
-.browseImg{
+#panelContainer .browseImg{
     width:100%;
     box-shadow:0 0 10px rgb(100,100,100);
 }
-.uploadRight{
+#panelContainer .uploadRight{
     float:right;
     margin:40px 10px 0 0;
     width:40%;
 }
-.uploadImg{
+#panelContainer .uploadImg{
     width:100%;
     box-shadow:0 0 10px rgb(100,100,100);
 }
-.panelTextarea{
+#panelContainer .panelTextarea{
     width:100%;
     height:25em;
     font-family:monospace;
 }
-.panelList li{
+#panelContainer .panelList li{
     list-style:outside;
 }
-.panelClear{
+#panelContainer .panelClear{
     clear:both;
 }
-.panelContainer input, .panelContainer textarea, select{
+#panelContainer select{
+    width:100%;
+}
+#panelContainer input, #panelContainer textarea, #panelContainer select{
     box-shadow:rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
     text-decoration: none solid rgb(85, 85, 85);
     border:1px solid rgb(204, 204, 204);
@@ -105,69 +108,75 @@ ul.panelNav{
     color:rgb(85, 85, 85);
     background-color:rgb(255, 255, 255);
 }
-.panelContainer input:focus, .panelContainer textarea:focus {
+#panelContainer input:focus, #panelContainer textarea:focus {
     border-color:#66afe9;
 }
-.panelContainer input[type="text"], .panelContainer input[type="password"]{
+#panelContainer input[type="text"], #panelContainer input[type="password"]{
     width:100%;
 }
-input.panelBtnBlue{
+#panelContainer input.panelBtnBlue{
     color:#fff;
     cursor:pointer;
     background-color:#428bca;
     border-color:#357ebd;
 }
-input.panelBtnBlue:hover{
+#panelContainer input.panelBtnBlue:hover{
     background-color:#3276B1;
     border-color:#285E8E;
 }
-input.panelBtnGreen{
+#panelContainer input.panelBtnGreen{
     color:#fff;
     cursor:pointer;
     background-color:rgb(92,184,92);
     border-color:rgb(76,174,76);
 }
-input.panelBtnGreen:hover{
+#panelContainer input.panelBtnGreen:hover{
     background-color:rgb(71,164,71);
     border-color:rgb(57,132,57);
 }
-input.panelBtnRed{
+#panelContainer input.panelBtnRed{
     color:#fff;
     cursor:pointer;
     background:rgb(217, 83, 79);
     border-color:rgb(212, 63, 58);
 }
-input.panelBtnRed:hover{
+#panelContainer input.panelBtnRed:hover{
     background-color:rgb(210, 50, 45);
     border-color:rgb(172, 41, 37);
+}
+#panelContainer .panelReadonly{
+    background: rgb(221, 221, 221);
+}
+#panelContainer .panelHide{
+    display:none;
 }
 
 /* Dynamic rules */
 
 @media all and (max-width: 1300px){
-    .uploadRight{
+    #panelContainer .uploadRight{
         float:none;
         width:100%;
     }
-    .panelLeft{
+    #panelContainer .panelLeft{
         float:none;
     }
 }
 @media all and (max-width: 550px){
-    .panelContainer{
+    #panelContainer .panelContainer{
         padding:10px;
     }
-    .panelChoose{
+    #panelContainer .panelChoose{
         width:100%;
         float:none;
         border-right:none;
         border-bottom:1px solid rgb(212, 212, 212);
         text-align:center;
     }
-    .panelContent{
+    #panelContainer .panelContent{
         margin-left:0;
     }
-    .panelTitle a{
+    #panelContainer .panelTitle a{
         padding:0 60px;
     }
 }

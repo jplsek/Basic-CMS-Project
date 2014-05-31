@@ -69,7 +69,7 @@ example: /cms/addPage.php
 
 ## Currently working on:
 
-1. Create a better functioning settings changer
+1. Create a better functioning settings changer (using Sqlite)
 
 1. Combine edit article / delete article and edit page / delete page -- list articles / pages similar to 'browse files'
 
@@ -106,8 +106,6 @@ Stretch goals (I don't care too much about these...):
 1. Make a 'first run' installer?
 
 2. Adding users? (This will probably add users to a database, but the admin credentails will stay in a seperate file like it is now (check key.php). This is because if you don't want to use the 'blog' functionality of the CMS, you won't have to rely on requiring MYSQL.)
-
-3. Switch to sqlite?
 
 ## Bugs
 

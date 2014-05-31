@@ -6,32 +6,32 @@ session_start();
 
 if (isset($_SESSION['logged_in'])){
     //display index page
-    
+
     include "headContent.php";
-    
+
     echo "<h1>Welcome!</h1><p>This is the starter page. (WIP)</p>";
-    
+
     // edit recent article, edit recent pages?, buttons to do stuff from sidebar
-    
+
     include 'footer.php';
-    
+
 } else {
-    
+
     include 'aSettings.php';
-    
+
     include $headerA;
     include $navA;
-    
+
     if(isset($_POST['username'], $_POST['password'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        
+
         if (empty($username) or empty($password)) {
             $error = 'All fields are required.';
         } else {
-        
+
             require 'key.php';
-            
+
             if ($username == $user) {
                 if (password_verify($password, $passEnc)) {
                     // user correct
@@ -50,7 +50,7 @@ if (isset($_SESSION['logged_in'])){
     }
 
     ?>
-    
+
     <style>
         .logIn{
             text-align:center;
@@ -81,23 +81,23 @@ if (isset($_SESSION['logged_in'])){
             text-decoration:none;
         }
     </style>
-    
+
     <div class="logIn">
         <h1>Log In</h1>
-        
+
         <form action="./" method="post">
             <input type="text" name="username" placeholder="Username"/><br/><br/>
             <input type="password" name="password" placeholder="Password"/><br/><br/>
             <button type="button" class="btn"><a href="/">Main Website</a></button>
             <input type="submit" value="Login" class="btn"/><br/>
         </form>
-        
+
         <?php if (isset($error)) {
             echo '<span class="panelRed"><strong>Error: '.$error.'</strong></span>';
         } ?>
-        
+
     </div>
-    
+
 
     <?php
 

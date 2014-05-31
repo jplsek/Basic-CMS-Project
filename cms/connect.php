@@ -16,7 +16,7 @@ try {
             article_tags TEXT NOT NULL
             );";
     $pdo->exec($sql);
-    
+
 } catch (PDOException $e) {
     echo '<span class="panelRed">Database <strong>login</strong> error. Check settings in settings.php</span><br/><br/>';
     var_dump($e->getMessage());
