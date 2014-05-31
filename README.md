@@ -69,9 +69,7 @@ example: /cms/addPage.php
 
 ## Currently working on:
 
-1. Create a better functioning settings changer (using Sqlite)
-
-1. Combine edit article / delete article and edit page / delete page -- list articles / pages similar to 'browse files'
+1. Create a better functioning settings changer (using Sqlite?)
 
 2. Make tags work
 
@@ -86,8 +84,6 @@ example: /cms/addPage.php
 Notes from quick usage test from a friend and self notes:
 
 * Remove summary (get $summary from content)
-
-* ID's, gray them out because they are readonly
 
 * Explain how to insert tags properly
 
@@ -108,5 +104,7 @@ Stretch goals (I don't care too much about these...):
 2. Adding users? (This will probably add users to a database, but the admin credentails will stay in a seperate file like it is now (check key.php). This is because if you don't want to use the 'blog' functionality of the CMS, you won't have to rely on requiring MYSQL.)
 
 ## Bugs
+
+* Allow editing of pages only, not the the folder (/example/.)
 
 If you find bugs, you can message me if you want to.
