@@ -53,7 +53,9 @@ if (isset($_SESSION['logged_in'])){
             //echo 'tags: ',$tags,'<br/>';
             //echo 'id: ',$id,'<br/><br/>';
 
-            echo '<p class="panelGreen">Post Editing Successful!</p>';
+            echo '<p class="panelGreen">Post Editing Successful!</p>
+                  <p>Would you like to <a href="browseArticles.php">edit another post</a>?</p>
+                 ';
 
         }
 
@@ -98,7 +100,9 @@ if (isset($_SESSION['logged_in'])){
             $query->bindValue(1,$id);
             $query->execute();
 
-            echo '<p class="panelGreen">Post deleted!</p>';
+            echo '<p class="panelGreen">Post deleted!</p>
+                  <p>Would you like to <a href="browseArticles.php">delete another post</a>?</p>
+                  ';
 
         } else {
 
@@ -112,7 +116,7 @@ if (isset($_SESSION['logged_in'])){
 
             <form method="get">
 
-                <select class="multipleSelect" name="id" multiple required>
+                <select name="id" required>
                     <option class="panelHide"></option>
                     <?php foreach ($articles as $article) { ?>
                         <option value="<?php echo $article['article_id']; ?>">

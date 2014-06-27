@@ -49,7 +49,11 @@
     margin-left:250px;
 }
 #panelContainer .panelRed{
-    color:#F00
+    color:#F00;
+}
+#panelContainer .panelYellow{
+    color:rgb(201, 156, 0);
+}
 }
 #panelContainer .panelRedDisable{
     color:rgb(255, 115, 115);
@@ -59,6 +63,12 @@
 }
 #panelContainer .panelBlue{
     color:#00F;
+}
+#panelContainer .panelBGBlue{
+    background-color:#428bca;
+}
+#panelContainer .panelBGRed{
+    background-color:#F00
 }
 #panelContainer .panelLeft{
     float:left;
@@ -73,7 +83,7 @@
     display:none;
 }
 #panelContainer .browseImg{
-    width:100%;
+    max-width:100%;
     box-shadow:0 0 10px rgb(100,100,100);
 }
 #panelContainer .uploadRight{
@@ -149,6 +159,16 @@
 }
 #panelContainer .panelHide{
     display:none;
+}
+#panelContainer .noticeIcon{
+    border-radius: 50%;
+    color: #fff;
+    cursor: help;
+    width: 25px;
+    display: inline-block;
+    font-size: 20px;
+    float:right;
+    text-align:center;
 }
 
 /* Dynamic rules */

@@ -35,6 +35,9 @@ if (isset($_SESSION['logged_in'])){
             $query->execute();
 
             echo '<p class="panelGreen">Post Created!</p>
+                  <p>Would you like <a href="browseArticles.php" title="Not implemented">edit '.$title.'</a> or <a href="add.php">create a new post</a>?</p>
+                  <p>You can link to it with:<br/>
+                  <code>&lt;a href="#Not Implemented"&gt;<a target="_blank" href="#Not Implemented">Not Implemented</a>&lt;/a&gt;</code></p>
                  ';
         }
     } else {

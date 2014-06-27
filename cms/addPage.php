@@ -43,7 +43,7 @@ if (isset($_SESSION['logged_in'])){ ?>
                 fclose($fileOpen);
 
                 echo '<p class="panelGreen">Created <a href="'.$dirName1.'">'.$dirName1.'</a></p>
-                      <p>Would you like to <a href="editPage.php?fileSelect='.$location.$name.'">edit '.$name.'</a>?</p>
+                      <p>Would you like to <a href="editPage.php?fileSelect='.$location.$name.'">edit '.$name.'</a> or <a href="addPage.php">add another page</a>?</p>
                       <p>You can link to it with:<br/>
                       <code>&lt;a href="'.$dirName1.'"&gt;<a target="_blank" href="'.$dirName1.'">'.$name.'</a>&lt;/a&gt;</code></p>
                      ';
@@ -57,7 +57,7 @@ if (isset($_SESSION['logged_in'])){ ?>
 
              }
 
-        } else if (!is_dir($fullLocation)){  // checks to see if the folder exsists.
+        } else if (!is_dir($fullLocation)){  // checks to see if the folder exsists, then create the first page.
 
             mkdir($fullLocation, 0771);
 
@@ -82,7 +82,7 @@ if (isset($_SESSION['logged_in'])){ ?>
                   <p class="panelGreen">Created file: '.$dirName1.'/'.$fileName.'<p>
                  ';
 
-            echo '<p>Would you like to <a href="editPage.php?fileSelect='.   $fullLocation.'content.html">edit '.$name.'</a>?</p>
+            echo '<p>Would you like to <a href="editPage.php?fileSelect='.   $fullLocation.'content.html">edit '.$name.'</a> or <a href="addPage.php">add another page</a>?</p>
                   <p>You can link to it with:<br/>
                   <code>&lt;a href="'.$dirName1.'"&gt;<a target="_blank" href="'.$dirName1.'">'.$name.'</a>&lt;/a&gt;</code></p>
                  ';
@@ -114,6 +114,8 @@ if (isset($_SESSION['logged_in'])){ ?>
     } else {
 
     ?>
+
+    <span class="noticeIcon panelBGBlue" title="If you want a url to look like 'example.com/about', you would put 'about' in the 'New File Name'. Add any title (this will apply to the &lt;title&gt; tag and add a default &lt;h1&gt; to the page). Then select the root (/) folder. If you want to create just a file, make the 'New File Name' with 'about.txt' or 'about.html', then check the "Create only a file" box.">?</span>
 
         <form method="post"> <!-- create folder with the name and add the index.php and content.php to the folder -->
 

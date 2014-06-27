@@ -34,14 +34,14 @@ if (isset($_SESSION['logged_in'])){
         replace('aSettings.php', $footerAS, $footerASNew);
 
         echo '<p class="panelGreen">Change Successful!</p>
-              <p>Article header location has been changed to: '.$headerASNew.'</p>
-              <p>Article Navigation location has been changed to: '.$navASNew.'</p>
-              <p>Article Blog location has been changed to: '.$blogASNew.'</p>
-              <p>Article Footer has been changed to: '.$footerASNew.'</p>
-              <p>Page title has been changed to: '.$titleNew.'</p>
-              <p>Date format has been changed to: '.$dateFormatNew.'</p>
-              <p>Edited message has been changed to: '.$editedMessageNew.'</p>
-              <p>Summary count has been changed to: '.$summaryMaxNew.'</p>
+              <p>Article header location has been changed to: <span class="panelGreen">'.$headerASNew.'</span></p>
+              <p>Article Navigation location has been changed to: <span class="panelGreen">'.$navASNew.'</span></p>
+              <p>Article Blog location has been changed to: <span class="panelGreen">'.$blogASNew.'</span></p>
+              <p>Article Footer has been changed to: <span class="panelGreen">'.$footerASNew.'</span></p>
+              <p>Page title has been changed to: <span class="panelGreen">'.$titleNew.'</span></p>
+              <p>Date format has been changed to: <span class="panelGreen">'.$dateFormatNew.'</span></p>
+              <p>Edited message has been changed to: <span class="panelGreen">'.$editedMessageNew.'</span></p>
+              <p>Summary count has been changed to: <span class="panelGreen">'.$summaryMaxNew.'</span></p>
              ';
 
     } else if (isset($_POST['reset'])){
@@ -58,14 +58,14 @@ if (isset($_SESSION['logged_in'])){
         replace('aSettings.php', $footerAS, $footerASDefault);
 
         echo '<p class="panelGreen">Change Successful!</p>
-              <p>Article header location has been changed to: '.$headerASDefault.'</p>
-              <p>Article Navigation location has been changed to: '.$navASDefault.'</p>
-              <p>Article Blog location has been changed to: '.$blogASDefault.'</p>
-              <p>Article Footer has been changed to: '.$footerASDefault.'</p>
-              <p>Page title has been changed to: '.$titleDefault.'</p>
-              <p>Date format has been changed to: '.$dateFormatDefault.'</p>
-              <p>Edited message has been changed to: '.$editedMessageDefault.'</p>
-              <p>Summary count has been changed to: '.$summaryMaxDefault.'</p>
+              <p>Article header location has been changed to: <span class="panelGreen">'.$headerASDefault.'</span></p>
+              <p>Article Navigation location has been changed to: <span class="panelGreen">'.$navASDefault.'</span></p>
+              <p>Article Blog location has been changed to: <span class="panelGreen">'.$blogASDefault.'</span></p>
+              <p>Article Footer has been changed to: <span class="panelGreen">'.$footerASDefault.'</span></p>
+              <p>Page title has been changed to: <span class="panelGreen">'.$titleDefault.'</span></p>
+              <p>Date format has been changed to: <span class="panelGreen">'.$dateFormatDefault.'</span></p>
+              <p>Edited message has been changed to: <span class="panelGreen">'.$editedMessageDefault.'</span></p>
+              <p>Summary count has been changed to: <span class="panelGreen">'.$summaryMaxDefault.'</span></p>
              ';
 
     } else {
@@ -108,9 +108,11 @@ if (isset($_SESSION['logged_in'])){
 
         <form method="post">
 
-            <input type="submit" value="Reset Settings" name="reset" class="panelBtnGreen"/><br/>
+            <input type="submit" value="Reset Settings" onclick="clicked(event)" name="reset" class="panelBtnGreen"/><br/>
 
-        <form>
+        </form>
+
+        <span class="noticeIcon panelBGRed" title="Warning: Do not have the same 'settings' value as other settings (this includes empty values)! This will be fixed in a later version! (ex: 'header: /empty' and 'footer: /empty')">!</span>
 
         <?php
 

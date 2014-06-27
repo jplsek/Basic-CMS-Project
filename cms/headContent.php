@@ -70,7 +70,6 @@ if ($header != $root){ // checks to see if the $header is empty
 
 <link rel="stylesheet" href="panel.css"/>
 <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
 
 tinymce.init({ // The wysiwyg editor
@@ -80,13 +79,9 @@ tinymce.init({ // The wysiwyg editor
     content_css: "<?php echo $css; ?>", // uses website style
 });
 
-function clicked(e){
-    if(!confirm('Are you sure? This will be deleted permanently!'))e.preventDefault();
+function clicked(warning){
+    if(!confirm('Are you sure? This will be reset or deleted permanently!'))warning.preventDefault();
 }
-
-$(document).ready(function(){
-    $(".multipleSelect").css("height", parseInt($(".multipleSelect option").length) * 20);
-});
 
 </script>
 
@@ -116,6 +111,6 @@ if ($nav != $root){ // checks to see if $nav is empty
                 <li><a href="logout.php">Logout</a></li>
             </ul>
 
-            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.10</small>
+            <small class="panelMention">Created by <a href="//www.jeremyplsek.com" title="Personal Website" target="_blank">Jeremy Plsek</a><br/> Version 0.8.11</small>
         </div>
         <div class="panelContent">

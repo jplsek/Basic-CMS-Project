@@ -83,9 +83,9 @@ example: /cms/addPage.php
 
 Notes from quick usage test from a friend and self notes:
 
-* Remove summary (get $summary from content)
+* Remove summary (get $summary from $content)
 
-* Explain how to insert tags properly
+* Explain how to insert tags properly (and get tags to acutally work and be useful)
 
 * Add a 'copy' button next to links to insert (also find a way to make this work properly when pasteing into WYSIWYG editor)
 
@@ -93,9 +93,13 @@ Notes from quick usage test from a friend and self notes:
 
 * Add a preview for posts and pages when editing
 
-* Create only a file explanation
+* Add edit style button on the settings page
 
-* Continue editing button for pages / articles (after adding and editing them)
+* Add a way to enable / disable comments with Disqus?
+
+* Make a nice CSS hover for the info 'icons'
+
+* better browse selection list
 
 Stretch goals (I don't care too much about these...):
 

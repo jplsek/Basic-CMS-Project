@@ -20,11 +20,16 @@ if (isset($_SESSION['logged_in'])){
 
     <?php
 
-    if (isset($_GET['edit'])){
+    if (isset($_GET['edit'])){ // when edit is pressed...
         $file = $_GET['item'];
         $fileRoot = substr($file, 2); // removes first 2 periods
 
-        if (isset($_POST['changeFile'])) {
+        if (strpos($fileRoot, '/.')){ // checks if selecting a folder
+
+            echo '<p class="panelYellow">You selected a folder, not a file! <a href="browsePages.php">Try again</a>.</p>';
+
+        } else if (isset($_POST['changeFile'])) { // checks if sending an acutal edit
+
             $slash = stripslashes($_POST['fileEdit']);
             $fileOpen = fopen($file,'w');
             fwrite($fileOpen,$slash);
@@ -32,7 +37,7 @@ if (isset($_SESSION['logged_in'])){
 
             echo '<p class="panelGreen">Edit successful!</p>';
 
-            if (strpos($fileRoot, 'content.html')){
+            if (strpos($fileRoot, 'content.html')){ // checks if content.html exsists to change the file name to look liek the appropriate folder.
 
                 $fileRootDir  = substr($fileRoot, 0, -13);
                 $fileRootDir1 = substr($fileRoot, 1, -13);
@@ -40,13 +45,13 @@ if (isset($_SESSION['logged_in'])){
                 echo '<p>Would you like to view <a target="_blank" href="'.$fileRootDir.'">'.$fileRootDir1.'</a>?</p>
                       <p>Or wourld you like to <a href="browsePages.php">edit another page</a>?</p>';
 
-            } else {
+            } else { // shows the normal text
 
                 echo '<p>Would you like to view <a target="_blank" href="'.$fileRoot.'">'.$fileRoot.'</a> or <a href="browsePages.php">edit another page</a>?</p>';
 
             }
 
-        } else {
+        } else { // Shows the editing panel
 
             echo '<label for="sc">Editing File: '.$fileRoot.'</label><br/>
                   <form method="post">';
@@ -65,7 +70,7 @@ echo '</textarea><br /><br />
 
         }
 
-    } else if (isset($_GET['delete'])){
+    } else if (isset($_GET['delete'])){ // when delte is pressed...
 
             $name = $_GET['item']; // out: ../name/.. (or ../name.bar)
 
@@ -95,6 +100,8 @@ echo '</textarea><br /><br />
 
             }
 
+            echo '<p>Would you like to <a href="browsePages.php">delete another page</a>?</p>';
+
         } else {
 
         ?>
@@ -103,7 +110,7 @@ echo '</textarea><br /><br />
 
         <form method="get">
 
-            <select class="multipleSelect" name="item" multiple required>
+            <select name="item" required>
                     <option class="panelHide"></option>
 
                     <?php
